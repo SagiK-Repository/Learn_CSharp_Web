@@ -1,0 +1,16 @@
+﻿@page
+@model StartEmptyASPNetCoreWeb.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<button id="helloButton">Click me</button>
+<p id="message"></p>
+
+<script>
+    document.getElementById("helloButton").addEventListener("click", function () {
+        document.getElementById("message").innerText = "Hello";
+    });
+</script>
