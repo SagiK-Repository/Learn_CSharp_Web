@@ -1,0 +1,18 @@
+﻿@page "/test"
+@rendermode InteractiveServer
+
+<PageTitle>Home</PageTitle>
+
+
+<button class="btn btn-primary" @onclick="UpdateMessage">Button</button>
+<p role="status">Message: @message</p>
+
+
+@code {
+    private string message = string.Empty;
+
+    private void UpdateMessage()
+    {
+        message = "Hello";
+    }
+}
