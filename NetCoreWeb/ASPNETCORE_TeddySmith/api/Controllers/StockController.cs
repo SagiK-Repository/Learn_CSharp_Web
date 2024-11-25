@@ -1,4 +1,5 @@
 using api.Data;
+using api.Dtos.Stock;
 using api.Mappers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -30,5 +31,14 @@ public class StockController : ControllerBase
         if (stock == null)
             return NotFound();
         return Ok(stock.ToStockDto());
+    }
+
+    [HttpPost]
+    public async Task<ActionResult> Create([FromBody] CreateStockRequestDto stockDto)
+    {
+        var stockModel = stockDto.ToStockFromCreateDTO();
+        await _context.Stocks.AddAsync(stockModel);
+        await _context.SaveChangesAsync();
+        return CreatedAtAction(nameof(GetById), new { id = stockModel.Id} , stockModel.ToStockDto());
     }
 }
