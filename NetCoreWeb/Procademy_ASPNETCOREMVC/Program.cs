@@ -5,7 +5,12 @@ app.MapGet("/", (HttpContext context) =>
 {
     string path = context.Request.Path;
     string method = context.Request.Method;
-    return "Request path: " + path + " Http Method: " + method;
+    var userAgent = string.Empty;
+    
+    if (context.Request.Headers.ContainsKey("User-Agent"))
+        userAgent = context.Request.Headers["User-Agent"];
+
+    return "Request path: " + path + " Http Method: " + method + " User Agent: " + userAgent;
 });
 
 app.Run();
