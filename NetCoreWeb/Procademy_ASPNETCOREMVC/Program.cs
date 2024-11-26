@@ -10,6 +10,9 @@ app.MapGet("/", (HttpContext context) =>
     if (context.Request.Headers.ContainsKey("User-Agent"))
         userAgent = context.Request.Headers["User-Agent"];
 
+    context.Response.Headers["Content-Type"] = "text/html";
+    context.Response.Headers["MyHeader"] = "Hello, World";
+    return "<h2>This is a Text response</h2>";
     return "Request path: " + path + " Http Method: " + method + " User Agent: " + userAgent;
 });
 
