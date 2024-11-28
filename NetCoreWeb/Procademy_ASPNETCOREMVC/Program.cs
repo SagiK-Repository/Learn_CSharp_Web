@@ -1,3 +1,7 @@
+using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.Extensions.Primitives;
+using System.IO;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
@@ -15,7 +19,7 @@ app.Run(async (HttpContext context) =>
         context.Response.StatusCode = 200;
         await context.Response.WriteAsync("<h2>This is a Text response</h2>");
     }
-    else if (path == "/Product")
+    else if (method == "GET" && path == "/Product")
     {
         context.Response.StatusCode = 200;
 
@@ -29,6 +33,20 @@ app.Run(async (HttpContext context) =>
         }
 
         await context.Response.WriteAsync("Your are in Products page");
+    }
+    else if (method == "POST" && path == "/Product")
+    {
+        string id = "", name = "";
+        StreamReader reader = new StreamReader(context.Request.Body);
+        string data = await reader.ReadToEndAsync();
+        Dictionary<string, StringValues> dict = QueryHelpers.ParseQuery(data);
+
+        if (dict.ContainsKey("id") && dict.ContainsKey("name"))
+        {
+            await context.Response.WriteAsync($"ID is : {dict["id"]!}\nName is : {dict["name"][0]}");
+            return;
+        }
+        await context.Response.WriteAsync($"Request body contains: {data}");
     }
     else if (path == "/Contact")
     {
