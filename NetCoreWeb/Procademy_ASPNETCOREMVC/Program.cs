@@ -20,10 +20,11 @@ app.Use(async (HttpContext context, RequestDelegate next) =>
     await next(context);
 });
 
-// Middleware 3
+// Middleware 3, 4
 app.UseMiddleware<MyMiddleware>();
+app.MyMiddleware();
 
-// Middleware 4
+// Middleware 5
 app.Run(async (HttpContext context) =>
 {
     string path = context.Request.Path;
