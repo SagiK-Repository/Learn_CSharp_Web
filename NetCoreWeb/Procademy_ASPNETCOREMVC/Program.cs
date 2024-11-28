@@ -1,40 +1,8 @@
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Primitives;
-using Procademy_ASPNETCOREMVC.CustomMiddleware;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddTransient<MyMiddleware>();
 var app = builder.Build();
-
-// Middleware 1
-app.Use(async (HttpContext context, RequestDelegate next) =>
-{
-    await context.Response.WriteAsync("Welcome from ASP.NET Core App!\n");
-    await next(context);
-});
-
-// Middleware 2
-app.Use(async (HttpContext context, RequestDelegate next) =>
-{
-    await context.Response.WriteAsync("\n\n");
-    await next(context);
-});
-
-// Middleware 3, 4, 5
-app.UseMiddleware<MyMiddleware>();
-app.MyMiddleware();
-app.UseAddCustomMiddleware();
-
-// Middleware 6
-app.UseWhen(context => context.Request.Query.ContainsKey("IsAuthorized") && context.Request.Query["IsAuthorized"] == "true",
-    app =>
-    {
-        app.Use(async (context, next) =>
-        {
-            await context.Response.WriteAsync("Middleware 6 called\n");
-            await next(context);
-        });
-    });
 
 // Middleware 7
 app.Run(async (HttpContext context) =>
@@ -72,14 +40,14 @@ app.Run(async (HttpContext context) =>
     }
     else if (method == "POST" && path == "/Product")
     {
-        string id = "", name = "";
         StreamReader reader = new StreamReader(context.Request.Body);
         string data = await reader.ReadToEndAsync();
         Dictionary<string, StringValues> dict = QueryHelpers.ParseQuery(data);
 
         if (dict.ContainsKey("id") && dict.ContainsKey("name"))
         {
-            await context.Response.WriteAsync($"ID is : {dict["id"]!}\nName is : {dict["name"][0]}");
+            string id = dict["id"]!, name = dict["name"][0]!;
+            await context.Response.WriteAsync($"ID is : {id}\nName is : {name}");
             return;
         }
         await context.Response.WriteAsync($"Request body contains: {data}");
@@ -91,9 +59,6 @@ app.Run(async (HttpContext context) =>
 
         context.Response.StatusCode = 200;
         await context.Response.WriteAsync("Request path: " + path + " Http Method: " + method + " User Agent: " + userAgent);
-    }
-    else if (path == "/favicon.ico")
-    {
     }
     else
     {

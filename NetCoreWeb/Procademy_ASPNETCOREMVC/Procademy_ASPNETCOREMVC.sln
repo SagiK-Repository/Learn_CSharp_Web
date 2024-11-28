@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Procademy_ASPNETCOREMVC", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Procademy_ASPNETCOREMVC_2", "..\Procademy_ASPNETCOREMVC_2\Procademy_ASPNETCOREMVC_2.csproj", "{BE103E34-F637-4263-B73D-8C9DB8532EB2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Procademy_ASPNETCOREMVC_1", "..\Procademy_ASPNETCOREMVC_1\Procademy_ASPNETCOREMVC_1.csproj", "{0E7BAFC9-3F71-4AF7-B763-514C2C32ACC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BE103E34-F637-4263-B73D-8C9DB8532EB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE103E34-F637-4263-B73D-8C9DB8532EB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE103E34-F637-4263-B73D-8C9DB8532EB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E7BAFC9-3F71-4AF7-B763-514C2C32ACC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E7BAFC9-3F71-4AF7-B763-514C2C32ACC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E7BAFC9-3F71-4AF7-B763-514C2C32ACC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E7BAFC9-3F71-4AF7-B763-514C2C32ACC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
