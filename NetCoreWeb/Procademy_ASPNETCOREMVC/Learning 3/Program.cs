@@ -1,4 +1,10 @@
+using Procademy_ASPNETCOREMVC_2.CustomConstrains;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddRouting(options =>
+{
+    options.ConstraintMap.Add("alphanumeric", typeof(AlphaNumericConstraint));
+});
 var app = builder.Build();
 
 app.UseRouting();
@@ -43,6 +49,12 @@ app.UseEndpoints(endpoints =>
         var bookId = Convert.ToInt32(context.Request.RouteValues["bookid"]);
         var authorName = Convert.ToString(context.Request.RouteValues["authorname"]); 
         await context.Response.WriteAsync($"\n\nThis is the book authored by {authorName}, book id: {bookId}" );
+    });
+
+    _ = endpoints.MapGet("/User/{username:alphanumeric}", async (context) =>
+    {
+        string? username = Convert.ToString(context.Request.RouteValues["username"]);
+        await context.Response.WriteAsync($"\n\nWelcome {username}" );
     });
 });
 
