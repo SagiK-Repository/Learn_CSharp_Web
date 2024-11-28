@@ -1,10 +1,24 @@
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Primitives;
-using System.IO;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
+// Middleware 1
+app.Use(async (HttpContext context, RequestDelegate next) =>
+{
+    await context.Response.WriteAsync("Welcome from ASP.NET Core App!\n");
+    await next(context);
+});
+
+// Middleware 2
+app.Use(async (HttpContext context, RequestDelegate next) =>
+{
+    await context.Response.WriteAsync("\n\n");
+    await next(context);
+});
+
+// Middleware 3
 app.Run(async (HttpContext context) =>
 {
     string path = context.Request.Path;
