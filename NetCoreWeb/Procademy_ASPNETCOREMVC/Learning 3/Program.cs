@@ -38,7 +38,7 @@ app.UseEndpoints(endpoints =>
         await context.Response.WriteAsync("\n\nYour are in Product page");
     });
 
-    _ = endpoints.MapGet("/Product/book/author/{authorname=john-smith}/{bookid=1}", async (context) =>
+    _ = endpoints.MapGet("/Product/book/author/{authorname:alpha}/{bookid=1}", async (context) =>
     {
         var bookId = Convert.ToInt32(context.Request.RouteValues["bookid"]);
         var authorName = Convert.ToString(context.Request.RouteValues["authorname"]); 
