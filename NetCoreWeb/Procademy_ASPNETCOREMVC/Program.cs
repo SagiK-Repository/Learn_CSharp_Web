@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Primitives;
+using Procademy_ASPNETCOREMVC.CustomMiddleware;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddTransient<MyMiddleware>();
 var app = builder.Build();
 
 // Middleware 1
@@ -19,13 +21,20 @@ app.Use(async (HttpContext context, RequestDelegate next) =>
 });
 
 // Middleware 3
+app.UseMiddleware<MyMiddleware>();
+
+// Middleware 4
 app.Run(async (HttpContext context) =>
 {
     string path = context.Request.Path;
     string method = context.Request.Method;
     var userAgent = string.Empty;
 
-    if (path == "/" || path == "/Home")
+    if (path == "/")
+    {
+        await context.Response.WriteAsync("Welcome from ASP.NET Core App!\n");
+    }
+    else if (path == "/Home")
     {
         context.Response.Headers["Content-Type"] = "text/html";
         context.Response.Headers["MyHeader"] = "Hello, World";
