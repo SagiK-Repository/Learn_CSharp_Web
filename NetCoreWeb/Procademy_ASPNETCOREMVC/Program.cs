@@ -20,22 +20,34 @@ app.Use(async (HttpContext context, RequestDelegate next) =>
     await next(context);
 });
 
-// Middleware 3, 4
+// Middleware 3, 4, 5
 app.UseMiddleware<MyMiddleware>();
 app.MyMiddleware();
+app.UseAddCustomMiddleware();
 
-// Middleware 5
+// Middleware 6
+app.UseWhen(context => context.Request.Query.ContainsKey("IsAuthorized") && context.Request.Query["IsAuthorized"] == "true",
+    app =>
+    {
+        app.Use(async (context, next) =>
+        {
+            await context.Response.WriteAsync("Middleware 6 called\n");
+            await next(context);
+        });
+    });
+
+// Middleware 7
 app.Run(async (HttpContext context) =>
 {
     string path = context.Request.Path;
     string method = context.Request.Method;
     var userAgent = string.Empty;
 
-    if (path == "/")
+    if (path == "/" || path == "/Home")
     {
         await context.Response.WriteAsync("Welcome from ASP.NET Core App!\n");
     }
-    else if (path == "/Home")
+    else if (path == "/Status")
     {
         context.Response.Headers["Content-Type"] = "text/html";
         context.Response.Headers["MyHeader"] = "Hello, World";
@@ -79,6 +91,9 @@ app.Run(async (HttpContext context) =>
 
         context.Response.StatusCode = 200;
         await context.Response.WriteAsync("Request path: " + path + " Http Method: " + method + " User Agent: " + userAgent);
+    }
+    else if (path == "/favicon.ico")
+    {
     }
     else
     {
