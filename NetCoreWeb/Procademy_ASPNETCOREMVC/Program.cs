@@ -15,6 +15,21 @@ app.Run(async (HttpContext context) =>
         context.Response.StatusCode = 200;
         await context.Response.WriteAsync("<h2>This is a Text response</h2>");
     }
+    else if (path == "/Product")
+    {
+        context.Response.StatusCode = 200;
+
+        var query = context.Request.Query;
+        if (query.ContainsKey("id") && query.ContainsKey("name"))
+        {
+            string id = query["id"]!;
+            string name = query["name"]!;
+            await context.Response.WriteAsync($"Your selected the product with ID : {id}, Name : {name}");
+            return;
+        }
+
+        await context.Response.WriteAsync("Your are in Products page");
+    }
     else if (path == "/Contact")
     {
         if (context.Request.Headers.ContainsKey("User-Agent"))
@@ -29,3 +44,5 @@ app.Run(async (HttpContext context) =>
         await context.Response.WriteAsync("The page you are looking for is not found!");
     }
 });
+
+app.Run();
