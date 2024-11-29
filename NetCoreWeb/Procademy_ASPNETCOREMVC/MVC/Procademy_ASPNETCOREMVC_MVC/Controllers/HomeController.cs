@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Procademy_ASPNETCOREMVC_MVC.Models;
 
-namespace Procademy_ASPNETCOREMVC_MVC.Controller;
+namespace Procademy_ASPNETCOREMVC_MVC.Controllers;
 
 public class HomeController
 {
@@ -37,13 +37,13 @@ public class Home
     public string Products(int id) => $"You are in Products({id}) Page!";
 }
 
-public class ContentResultController : Microsoft.AspNetCore.Mvc.Controller
+public class ContentResultController : Controller
 {
     [Route("ContentResult_Content")]
     public ContentResult ContentResult_Content() => Content("<h1>You are in About Page!<h1>", "text/html");
 }
 
-public class JsonController : Microsoft.AspNetCore.Mvc.Controller
+public class JsonController : Controller
 {
     [Route("NomalJson")]
     public ContentResult Nomal() => Content("{\"name\" : \"John\"}", "text/json");
