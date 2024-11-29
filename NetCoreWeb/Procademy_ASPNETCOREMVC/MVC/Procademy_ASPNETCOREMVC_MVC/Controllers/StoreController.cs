@@ -106,5 +106,25 @@ namespace Procademy_ASPNETCOREMVC_MVC.Controllers
                 return Content("Book ID not provided", "text/plain");
             return Content($"Book ID = {book.BookID}, Author = {book.Author}", "text/plain");
         }
+
+        [Route("/Validation/{BookID?}/{Author?}")]
+        public IActionResult BookBindingFromModel(BooksValidation book)
+        {
+            if (book.BookID.HasValue == false)
+                return Content("Book ID not provided", "text/plain");
+
+            if (!ModelState.IsValid)
+            {
+                List<string> errors = new List<string>();
+                foreach(var value in ModelState.Values)
+                    foreach(var error in value.Errors)
+                        errors.Add(error.ErrorMessage);
+
+                return BadRequest(string.Join("\n", errors));
+                return BadRequest("Some field values are not valid");
+            }
+
+            return Content($"Book ID = {book.BookID}, Author = {book.Author}", "text/plain");
+        }
     }
 }
