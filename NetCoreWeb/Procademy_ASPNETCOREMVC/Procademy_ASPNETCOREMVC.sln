@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Procademy_ASPNETCOREMVC_1",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Procademy_ASPNETCOREMVC_2", "Learning 3\Procademy_ASPNETCOREMVC_2.csproj", "{4D24317B-CD36-483D-BA37-82EC26AD5DFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Procademy_ASPNETCOREMVC_3", "Learning 4\Procademy_ASPNETCOREMVC_3\Procademy_ASPNETCOREMVC_3.csproj", "{23152691-22F1-4DDF-AAF9-CCA9A2BE2491}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{4D24317B-CD36-483D-BA37-82EC26AD5DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D24317B-CD36-483D-BA37-82EC26AD5DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D24317B-CD36-483D-BA37-82EC26AD5DFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23152691-22F1-4DDF-AAF9-CCA9A2BE2491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23152691-22F1-4DDF-AAF9-CCA9A2BE2491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23152691-22F1-4DDF-AAF9-CCA9A2BE2491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23152691-22F1-4DDF-AAF9-CCA9A2BE2491}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
