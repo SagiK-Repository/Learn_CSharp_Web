@@ -8,6 +8,20 @@ public class HomeController
     [Route("Home")]
     public string Index() => "Welcome ASP.NET Core Application!";
 
+    [Route("ContentReult")]
+    public ContentResult ContentResult() => new ContentResult()
+    {
+        Content= "Welcome ASP.NET Core Application!",
+        ContentType= "text/plain"
+    };
+
+    [Route("ContentReult_Html")]
+    public ContentResult HtmlResult() => new ContentResult()
+    {
+        Content = "<h1>Welcome ASP.NET Core Application!<h1>",
+        ContentType = "text/html"
+    };
+
     [Route("About")]
     public string About() => "You are in About Page!";
 
@@ -20,4 +34,10 @@ public class Home
 {
     [Route("/products/{id:int:min(1000):max(9999)}")]
     public string Products(int id) => $"You are in Products({id}) Page!";
+}
+
+public class ContentResultController : Microsoft.AspNetCore.Mvc.Controller
+{
+    [Route("ContentResult_Content")]
+    public ContentResult ContentResult_Content() => Content("<h1>You are in About Page!<h1>", "text/html");
 }
