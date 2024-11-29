@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Procademy_ASPNETCOREMVC", "Leaning 1\Procademy_ASPNETCOREMVC.csproj", "{64414CEB-0EE9-4B59-82F2-B17DA7E4512A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Procademy_ASPNETCOREMVC_1", "Leaning 2\Procademy_ASPNETCOREMVC_1.csproj", "{C04DEA97-2972-47E0-8055-8A4FD19731C0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Procademy_ASPNETCOREMVC_2", "Learning 3\Procademy_ASPNETCOREMVC_2.csproj", "{4D24317B-CD36-483D-BA37-82EC26AD5DFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Procademy_ASPNETCOREMVC_3", "Learning 4\Procademy_ASPNETCOREMVC_3\Procademy_ASPNETCOREMVC_3.csproj", "{23152691-22F1-4DDF-AAF9-CCA9A2BE2491}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Procademy_ASPNETCOREMVC_MVC", "MVC\Procademy_ASPNETCOREMVC_MVC\Procademy_ASPNETCOREMVC_MVC.csproj", "{EB342465-C744-404A-A484-D3F25D7E2A1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64414CEB-0EE9-4B59-82F2-B17DA7E4512A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64414CEB-0EE9-4B59-82F2-B17DA7E4512A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64414CEB-0EE9-4B59-82F2-B17DA7E4512A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64414CEB-0EE9-4B59-82F2-B17DA7E4512A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C04DEA97-2972-47E0-8055-8A4FD19731C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C04DEA97-2972-47E0-8055-8A4FD19731C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C04DEA97-2972-47E0-8055-8A4FD19731C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C04DEA97-2972-47E0-8055-8A4FD19731C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D24317B-CD36-483D-BA37-82EC26AD5DFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D24317B-CD36-483D-BA37-82EC26AD5DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D24317B-CD36-483D-BA37-82EC26AD5DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D24317B-CD36-483D-BA37-82EC26AD5DFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23152691-22F1-4DDF-AAF9-CCA9A2BE2491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23152691-22F1-4DDF-AAF9-CCA9A2BE2491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23152691-22F1-4DDF-AAF9-CCA9A2BE2491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23152691-22F1-4DDF-AAF9-CCA9A2BE2491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB342465-C744-404A-A484-D3F25D7E2A1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB342465-C744-404A-A484-D3F25D7E2A1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB342465-C744-404A-A484-D3F25D7E2A1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB342465-C744-404A-A484-D3F25D7E2A1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E4C2EF9-9955-4AEF-ADA9-B49C15CBFAFF}
+	EndGlobalSection
+EndGlobal
