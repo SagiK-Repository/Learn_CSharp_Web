@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Procademy_ASPNETCOREMVC_MVC.Models;
 
 namespace Procademy_ASPNETCOREMVC_MVC.Controller;
 
@@ -40,4 +41,13 @@ public class ContentResultController : Microsoft.AspNetCore.Mvc.Controller
 {
     [Route("ContentResult_Content")]
     public ContentResult ContentResult_Content() => Content("<h1>You are in About Page!<h1>", "text/html");
+}
+
+public class JsonController : Microsoft.AspNetCore.Mvc.Controller
+{
+    [Route("NomalJson")]
+    public ContentResult Nomal() => Content("{\"name\" : \"John\"}", "text/json");
+
+    [Route("ClassJson")]
+    public JsonResult Class() => new(new Employee(101, "Jhon", 10, 100));
 }
