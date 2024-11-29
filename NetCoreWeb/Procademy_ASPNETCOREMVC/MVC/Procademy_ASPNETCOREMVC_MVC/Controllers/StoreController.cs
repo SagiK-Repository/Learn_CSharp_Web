@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Procademy_ASPNETCOREMVC_MVC.Models;
 
 namespace Procademy_ASPNETCOREMVC_MVC.Controllers
 {
@@ -81,6 +83,28 @@ namespace Procademy_ASPNETCOREMVC_MVC.Controllers
             return Content($"Logged = {isLogged}, Parameter ID = {parameterId}", "text/plain");
         }
 
+        [Route("/BookBinidng/{BookID?}/{Author?}")]
+        public IActionResult BookBinding(Books book)
+        {
+            if (book.BookID.HasValue == false)
+                return Content("Book ID not provided", "text/plain");
+            return Content($"Book ID = {book.BookID}, Author = {book.Author}", "text/plain");
+        }
+
+        [Route("/BookBinidngFromQuery/{BookID?}/{Author?}")]
+        public IActionResult BookBindingFromQuery([FromQuery] Books book)
+        {
+            if (book.BookID.HasValue == false)
+                return Content("Book ID not provided", "text/plain");
+            return Content($"Book ID = {book.BookID}, Author = {book.Author}", "text/plain");
+        }
+
+        [Route("/BookBinidngFromModel/{BookID?}/{Author?}")]
+        public IActionResult BookBindingFromModel(BooksChoose book)
+        {
+            if (book.BookID.HasValue == false)
+                return Content("Book ID not provided", "text/plain");
+            return Content($"Book ID = {book.BookID}, Author = {book.Author}", "text/plain");
         }
     }
 }
