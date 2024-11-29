@@ -52,7 +52,35 @@ namespace Procademy_ASPNETCOREMVC_MVC.Controllers
             if (!isLogged)
                 return StatusCode(Microsoft.AspNetCore.Http.StatusCodes.Status401Unauthorized);
 
-            return Content($"Logged = {isLogged}, NoteId = {noteId}", "text/plain");
+            return Content($"Logged = {isLogged}, Note ID = {noteId}", "text/plain");
+        }
+    }
+
+    public class ParameterBinding : Controller
+    {
+        // /Parameter?IsLogged=true&NoteId=200
+        [Route("/Paremeter")]
+        public IActionResult Parameter(int parameterId, bool isLogged)
+        {
+            return Content($"Logged = {isLogged}, Parameter ID = {parameterId}", "text/plain");
+        }
+
+        // /Parameter/100/false/?IsLogged=true&NoteId=200 => 100, false가 우선순위
+        [Route("/Paremeter/{parameterid}/{islogged}")]
+        public IActionResult ParameterDepth(int? parameterId, bool isLogged)
+        {
+            return Content($"Logged = {isLogged}, Parameter ID = {parameterId}", "text/plain");
+        }
+
+        // /Parameter/false => Paremeter ID not provided
+        [Route("/Paremeters/{parameterId?}/{islogged?}")]
+        public IActionResult ParameterFromQuery([FromRoute]int? parameterId, [FromQuery]bool isLogged)
+        {
+            if (parameterId.HasValue == false)
+                return Content("Paremeter ID not provided", "text/plain");
+            return Content($"Logged = {isLogged}, Parameter ID = {parameterId}", "text/plain");
+        }
+
         }
     }
 }
