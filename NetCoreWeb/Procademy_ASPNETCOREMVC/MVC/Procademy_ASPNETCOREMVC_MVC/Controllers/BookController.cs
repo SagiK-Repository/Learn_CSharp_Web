@@ -28,6 +28,6 @@ public class BookController : Controller
             return new UnauthorizedResult();
         }
 
-        return File("Sample/Machine_Learning_Operations_MLOps_Overview_Definition_and_Architecture.pdf", "application/pdf"); // 동일한 결과
+        return File("Sample/Machine_Learning_Operations_MLOps_Overview_Definition_and_Architecture.pdf", "application/pdf");
     }
 }
