@@ -1,12 +1,13 @@
 using BoostMyTool.Application.Interfaces;
 using BoostMyTool.Model;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddRazorPages();
-
 var connectInfo = new ConnectionSettings(builder.Configuration.GetConnectionString("DefaultConnection")!);
-builder.Services.AddSingleton<ISettings>(connectInfo);
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()))
+                .AddSingleton<ISettings>(connectInfo)
+                .AddRazorPages();
 
 var app = builder.Build();
 

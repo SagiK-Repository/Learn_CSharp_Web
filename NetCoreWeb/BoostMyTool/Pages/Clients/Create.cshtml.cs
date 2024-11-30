@@ -1,5 +1,7 @@
 using BoostMyTool.Application.Interfaces;
+using BoostMyTool.Application.UseCase;
 using BoostMyTool.Model;
+using MediatR;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 
@@ -8,16 +10,20 @@ namespace BoostMyTool.Pages.Clients
     public class CreateModel : PageModel
     {
         private readonly ISettings _settings;
+        private readonly IMediator _mediator;
         public ClientInfo clientInfo = new();
         public string ErrorMessage = string.Empty;
         public string SuccessMessage = string.Empty;
 
-        public CreateModel(ISettings settings)
+        public CreateModel(
+            ISettings settings,
+            IMediator mediator)
         {
             _settings = settings; 
+            _mediator = mediator;
         }
 
-        public void OnPost()
+        public async Task OnPost()
         {
             clientInfo.Name = Request.Form["Name"]!;
             clientInfo.Email = Request.Form["Email"]!;
@@ -30,21 +36,10 @@ namespace BoostMyTool.Pages.Clients
                 return;
             }
 
+            CreateClientResponse? response = null;
             try
             {
-                using (SqlConnection connection = new SqlConnection(_settings.GetDBConnectionInfo()))
-                {
-                    connection.Open();
-                    string sql = "INSERT INTO clients " +
-                                 "(name, email, phone, address) VALUES " +
-                                 "(@name, @email, @phone, @address);";
-                    using SqlCommand command = new(sql, connection);
-                    command.Parameters.AddWithValue("@name", clientInfo.Name);
-                    command.Parameters.AddWithValue("@email", clientInfo.Email);
-                    command.Parameters.AddWithValue("@phone", clientInfo.Phone);
-                    command.Parameters.AddWithValue("@address", clientInfo.Address);
-                    command.ExecuteNonQuery();
-                }
+                response = await _mediator.Send(new CreateClientRequest(clientInfo.Name, clientInfo.Email, clientInfo.Phone, clientInfo.Address));
             }
             catch (Exception e)
             {
@@ -52,13 +47,14 @@ namespace BoostMyTool.Pages.Clients
                 return;
             }
 
-            clientInfo.Name = "";
-            clientInfo.Email = "";
-            clientInfo.Phone = "";
-            clientInfo.Address = "";
+            clientInfo.Name = response.Name;
+            clientInfo.Email = response.Email;
+            clientInfo.Phone = response.Phone;
+            clientInfo.Address = response.Address;
+
             SuccessMessage = "New Client Added Correctly";
 
-            Response.Redirect("/Clients/Index");
+            Response.Redirect(response.RedirectPath());
         }
     }
 }
