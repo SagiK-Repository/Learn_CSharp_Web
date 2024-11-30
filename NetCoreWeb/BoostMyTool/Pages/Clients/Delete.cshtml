@@ -1,0 +1,10 @@
+﻿@page
+@using System.Data.SqlClient
+@using BoostMyTool.Application.UseCase
+@using MediatR
+@inject IMediator _mediator
+@{
+    string id = Request.Query["Id"]!;
+    var response = await _mediator.Send(new DeleteClientRequest(id));
+    Response.Redirect(response.GetReDirect());
+}
