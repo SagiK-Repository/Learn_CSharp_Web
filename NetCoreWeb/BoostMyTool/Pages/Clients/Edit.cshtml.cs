@@ -1,5 +1,7 @@
 using BoostMyTool.Application.Interfaces;
+using BoostMyTool.Application.UseCase;
 using BoostMyTool.Model;
+using MediatR;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 
@@ -7,38 +9,24 @@ namespace BoostMyTool.Pages.Clients
 {
     public class EditModel : PageModel
     {
-        private readonly ISettings _settings;
+        private readonly IMediator _mediator;
         public ClientInfo clientInfo = new();
         public string ErrorMessage = string.Empty;
         public string SuccessMessage = string.Empty;
 
-        public EditModel(ISettings settings)
+        public EditModel(IMediator mediator)
         {
-            _settings = settings;
+            _mediator = mediator;
         }
 
-        public void OnGet()
+        public async Task OnGet()
         {
             string id = Request.Query["Id"]!;
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(_settings.GetDBConnectionInfo()))
-                {
-                    connection.Open();
-                    string sql = "SELECT * FROM clients WHERE id=@id";
-                    using SqlCommand command = new(sql, connection);
-                    command.Parameters.AddWithValue("@id", id);
-                    using SqlDataReader reader = command.ExecuteReader();
-                    if (reader.Read())
-                    {
-                        clientInfo.Id = reader.GetInt32(0);
-                        clientInfo.Name = reader.GetString(1);
-                        clientInfo.Email = reader.GetString(2);
-                        clientInfo.Phone = reader.GetString(3);
-                        clientInfo.Address = reader.GetString(4);
-                    }
-                }
+                var response = await _mediator.Send(new GetClientFromIdRequest(id));
+                clientInfo = response.ClientInfo;
             }
             catch (Exception e)
             {
@@ -47,7 +35,7 @@ namespace BoostMyTool.Pages.Clients
             }
         }
 
-        public void OnPost()
+        public async void OnPost()
         {
             clientInfo.Id = Convert.ToInt32(Request.Form["Id"]!);
             clientInfo.Name = Request.Form["Name"]!;
@@ -61,22 +49,10 @@ namespace BoostMyTool.Pages.Clients
                 return;
             }
 
+            UpdateClientResponse? response = null;
             try
             {
-                using (SqlConnection connection = new SqlConnection(_settings.GetDBConnectionInfo()))
-                {
-                    connection.Open();
-                    string sql = "UPDATE clients " +
-                                 "SET name=@name, email=@email, phone=@phone, address=@address " +
-                                 "WHERE id=@id;";
-                    using SqlCommand command = new(sql, connection);
-                    command.Parameters.AddWithValue("@name", clientInfo.Name);
-                    command.Parameters.AddWithValue("@email", clientInfo.Email);
-                    command.Parameters.AddWithValue("@phone", clientInfo.Phone);
-                    command.Parameters.AddWithValue("@address", clientInfo.Address);
-                    command.Parameters.AddWithValue("@id", clientInfo.Id);
-                    command.ExecuteNonQuery();
-                }
+                response = await _mediator.Send(new UpdateClientRequest(clientInfo));
             }
             catch (Exception e)
             {
@@ -84,7 +60,7 @@ namespace BoostMyTool.Pages.Clients
                 return;
             }
 
-            Response.Redirect("/Clients/Index");
+            Response.Redirect(response.GetRedirect());
         }
     }
 }
