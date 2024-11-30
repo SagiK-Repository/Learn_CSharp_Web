@@ -1,9 +1,7 @@
-using BoostMyTool.Application.Interfaces;
 using BoostMyTool.Application.UseCase;
 using BoostMyTool.Model;
 using MediatR;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Data.SqlClient;
 
 namespace BoostMyTool.Pages.Clients
 {
