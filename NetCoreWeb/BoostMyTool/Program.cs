@@ -1,12 +1,12 @@
+using BoostMyTool.Application.Interfaces;
 using BoostMyTool.Model;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddRazorPages();
 
-var connectInfo = new ConnectionDBInfo(builder.Configuration.GetConnectionString("DefaultConnection"));
-builder.Services.AddSingleton<ConnectionDBInfo>(connectInfo);
+var connectInfo = new ConnectionSettings(builder.Configuration.GetConnectionString("DefaultConnection")!);
+builder.Services.AddSingleton<ISettings>(connectInfo);
 
 var app = builder.Build();
 

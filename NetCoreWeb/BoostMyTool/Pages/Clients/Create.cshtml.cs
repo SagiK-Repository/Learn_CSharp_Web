@@ -1,3 +1,4 @@
+using BoostMyTool.Application.Interfaces;
 using BoostMyTool.Model;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
@@ -6,14 +7,14 @@ namespace BoostMyTool.Pages.Clients
 {
     public class CreateModel : PageModel
     {
-        private readonly ConnectionDBInfo _connectionDBInfo;
+        private readonly ISettings _settings;
         public ClientInfo clientInfo = new();
         public string ErrorMessage = string.Empty;
         public string SuccessMessage = string.Empty;
 
-        public CreateModel(ConnectionDBInfo connectionDBInfo)
+        public CreateModel(ISettings settings)
         {
-            _connectionDBInfo = connectionDBInfo; 
+            _settings = settings; 
         }
 
         public void OnPost()
@@ -31,7 +32,7 @@ namespace BoostMyTool.Pages.Clients
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(_connectionDBInfo.DBConnection))
+                using (SqlConnection connection = new SqlConnection(_settings.GetDBConnectionInfo()))
                 {
                     connection.Open();
                     string sql = "INSERT INTO clients " +

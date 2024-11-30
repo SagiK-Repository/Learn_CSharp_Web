@@ -1,3 +1,4 @@
+using BoostMyTool.Application.Interfaces;
 using BoostMyTool.Model;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
@@ -6,9 +7,15 @@ namespace BoostMyTool.Pages.Clients
 {
     public class EditModel : PageModel
     {
+        private readonly ISettings _settings;
         public ClientInfo clientInfo = new();
         public string ErrorMessage = string.Empty;
         public string SuccessMessage = string.Empty;
+
+        public EditModel(ISettings settings)
+        {
+            _settings = settings;
+        }
 
         public void OnGet()
         {
@@ -16,9 +23,7 @@ namespace BoostMyTool.Pages.Clients
 
             try
             {
-                string connectionString = "Data Source=DESKTOP-IKKG899\\SQLEXPRESS;Initial Catalog=BoostMyTool;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(_settings.GetDBConnectionInfo()))
                 {
                     connection.Open();
                     string sql = "SELECT * FROM clients WHERE id=@id";
@@ -58,9 +63,7 @@ namespace BoostMyTool.Pages.Clients
 
             try
             {
-                string connectionString = "Data Source=DESKTOP-IKKG899\\SQLEXPRESS;Initial Catalog=BoostMyTool;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(_settings.GetDBConnectionInfo()))
                 {
                     connection.Open();
                     string sql = "UPDATE clients " +
