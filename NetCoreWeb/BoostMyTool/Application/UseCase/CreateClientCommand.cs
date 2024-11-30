@@ -13,7 +13,7 @@ public record CreateClientResponse(string Name, string Email, string Phone, stri
 {
     public string RedirectPath() => "/Clients/Index";
 }
-public record CreateClientHandler : IRequestHandler<CreateClientRequest, CreateClientResponse>
+public class CreateClientHandler : IRequestHandler<CreateClientRequest, CreateClientResponse>
 {
     private readonly ISettings _settings;
     public CreateClientHandler(ISettings setting)

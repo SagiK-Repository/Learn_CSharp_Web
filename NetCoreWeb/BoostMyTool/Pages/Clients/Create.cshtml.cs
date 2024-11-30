@@ -9,17 +9,14 @@ namespace BoostMyTool.Pages.Clients
 {
     public class CreateModel : PageModel
     {
-        private readonly ISettings _settings;
         private readonly IMediator _mediator;
         public ClientInfo clientInfo = new();
         public string ErrorMessage = string.Empty;
         public string SuccessMessage = string.Empty;
 
         public CreateModel(
-            ISettings settings,
             IMediator mediator)
         {
-            _settings = settings; 
             _mediator = mediator;
         }
 
