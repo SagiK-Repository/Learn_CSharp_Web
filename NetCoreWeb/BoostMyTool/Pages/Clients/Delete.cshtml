@@ -1,23 +1,10 @@
 ﻿@page
 @using System.Data.SqlClient
-@using BoostMyTool.Application.Interfaces
-@inject ISettings _settings
+@using BoostMyTool.Application.UseCase
+@using MediatR
+@inject IMediator _mediator
 @{
-    try
-    {
-        string id = Request.Query["Id"]!;
-
-        using (SqlConnection connection = new SqlConnection(_settings.GetDBConnectionInfo()))
-        {
-            connection.Open();
-            string sql = "DELETE FROM clients WHERE id=@id;";
-            using SqlCommand command = new(sql, connection);
-            command.Parameters.AddWithValue("@id", id);
-            command.ExecuteNonQuery();
-        }
-    }
-    catch(Exception e)
-    {}
-    
-    Response.Redirect("/Clients/Index");
+    string id = Request.Query["Id"]!;
+    var response = await _mediator.Send(new DeleteClientRequest(id));
+    Response.Redirect(response.GetReDirect());
 }
