@@ -1,9 +1,10 @@
 ﻿namespace BoostMyTool.Model;
 public class ClientInfo
 {
-    public string Id = string.Empty;
-    public string name = string.Empty;
-    public string email = string.Empty;
-    public string phone = string.Empty;
-    public string asdress = string.Empty;
+    public int Id;
+    public string Name = string.Empty;
+    public string Email = string.Empty;
+    public string Phone = string.Empty;
+    public string Address = string.Empty;
+    public string Created = string.Empty;
 }
