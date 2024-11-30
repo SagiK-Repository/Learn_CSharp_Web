@@ -1,0 +1,23 @@
+﻿@page
+@using System.Data.SqlClient
+@{
+    try
+    {
+        string id = Request.Query["Id"]!;
+
+        string connectionString = "Data Source=DESKTOP-IKKG899\\SQLEXPRESS;Initial Catalog=BoostMyTool;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string sql = "DELETE FROM clients WHERE id=@id;";
+            using SqlCommand command = new(sql, connection);
+            command.Parameters.AddWithValue("@id", id);
+            command.ExecuteNonQuery();
+        }
+    }
+    catch(Exception e)
+    {}
+    
+    Response.Redirect("/Clients/Index");
+}
