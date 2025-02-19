@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 단위</title>
+    <style>
+        :root{
+            font-size: 5px;
+        }
+        body {
+            font-size: 12px;
+        }
+        .c1{
+            width:300px;
+            background-color: gray;
+        }
+        .c2{
+            width: 30%;
+            background-color: gray;
+        }
+        .c3{
+            font-size:1.5em;
+        }
+        strong{
+            font-size:1.5em;
+        }
+        .cs4{
+            font-size:1.5rem;
+        }
+
+        aside p{
+            font-size:1.5em;
+        }
+        section p{
+            font-size: 1.5rem;
+        }
+
+        /*html, body,.parent{
+            height:100%;
+        }*/
+        .viewport_parent{
+            width:50vw; /*width:50%; */
+            height:50vh; /*height: 50%;*/
+            background-color: darkcyan;
+        }
+        .viewport{
+            width:100vw;
+            height:10vh;
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="c1">Element</div>
+
+    <div class="c1">
+        <div class="c2">Child Element</div>
+    </div>
+
+    <section>
+
+        <div class="c3">em : 단위가 쓰여진 곳의 <strong>폰트 사이즈(Body 기준, 기본 16px) 배수</strong></div>
+        <div class="c4">rem : 문서의 기본값인 16px(:root 기준, 보통 16px)의 배수 </div>
+
+        <p>em :  16px (body font-size) * 1em</p>
+        <p>rem : 16px (root font-size) * 1rem</p>
+    </section>
+
+    <aside>
+        <p>aside : aside요소는 main content(본문) 바로 다음 요소</p>
+    </aside>
+
+    <div class="viewport_parent">
+        <div class="viewport">Viewport</div>
+    </div>
+
+
+</body>
+
+</html>
