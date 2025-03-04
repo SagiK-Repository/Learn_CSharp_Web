@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 기본 문법</title>
+
+    <style>
+        h1:before{
+            content:'-';
+            color:blue;
+        }
+        h1:after{
+            content:'-';
+            color:red;
+        }
+        h2:before{
+            content:'\2c2'
+        }
+
+        li:first-child,
+        li:last-child,
+        li:nth-child(3){
+            text-decoration: underline;
+        }
+        li:nth-child(2n){
+            color:blueviolet;
+        }
+        /*
+        li:nth-child(even){
+            color:blueviolet;
+        }
+        */
+        li:nth-child(2n + 1){
+            color:blue;
+        }
+
+        h2:nth-of-type(2){
+            background: silver;
+        }
+
+        #policy:target{
+            background: green;
+            color:#fff
+        }
+        input:checked + label{
+            background: silver;
+        }
+        button:disabled{
+            background: #999;
+            color:#ebebeb;
+        }
+
+        header *:not(h1){
+            color:green;
+        }
+        header *:not(:last-child){
+            background-color: silver;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>의사 요소 선택자-앞뒤</h1>
+    <h2>UnicodeLookup</h2>
+    <a href="https://unicodelookup.com/">UnicodeLookup</a>
+    <br>
+    &#706;
+
+    <h1>일반 구조 선택자</h1>
+    <ul>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+    </ul>
+
+    <h2>형태 구조 선택자</h2>
+
+    <h2>상태 선택자</h2>
+    <a href="#policy">약관보기</a>
+    <form action="">
+        <input type="radio" name="newsletter" id="yes">
+        <label for="yes">Yes</label>
+        <input type="radio" name="newsletter" id="no">
+        <label for="no">No</label>
+        <hr>
+        <input type="checkbox" id="agree">
+        <label for="agree">약관 동의</label>
+        <hr>
+        <button disabled>전송</button>
+    </form>
+    <div id="policy">
+        <h2>약관안내</h2>
+    </div>
+
+    <h2>부정 선택자</h2>
+    <header>
+        <h1>logo</h1>
+        <h2>main title</h2>
+        <p>Brief Description</p>
+        <a href="">read more</a>
+    </header>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 기본 문법</title>
+    <style>
+        *{
+            color:blue;
+        }
+        h3{
+            color:green;
+        }
+        #id_selector{
+            color:red;
+        }
+        .samll{
+            color: yellow;
+        }
+        .hilight-color{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        header .title{
+            background: purple;
+        }
+        section h1{
+            background: silver;
+        }
+        nav ul li a{
+            text-decoration: underline;
+        }
+        nav > ul > li > a{
+            background: pink;
+        }
+
+        section h5 + ul {
+            background: silver;
+        }
+        section h3 ~ ul {
+            background: green;
+        }
+        [target]{
+            text-decoration: none;
+            background: silver;
+        }
+        [target="_blank"]{
+            font-size: 20px;
+        }
+        a[class^="inner"]{
+            font-weight: bold;
+            color:black;
+        }
+
+        h3:hover{
+            background: red;
+        }
+        :link{
+            color: red;
+        }
+        :visited{
+            color: green;
+        }
+        f3:focus{
+            background: blue;
+            color: white;
+        }
+        f3:active{
+            background:black;
+            color:red;
+        }
+        input, button{
+            outline:none;
+        }
+        input:focus, button:focus{
+            background: green;
+            color: white;
+        }
+        form:focus-within{
+            background:silver;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS: 표현 언어</h1>
+    <h2>*: 전체 선택자</h2>
+    <h3>Tag로 구분: Tag 선택자</h3>
+    <h4 id="id_selector">ID로 구분: ID 선택자, ID가 한 페이지 안에 2개 있으면 오류, 한 개밖에 구성 못 함</h4>
+    <h5 class="small">Class 구분: Class 선택자, 한 페이지에 여러 Class 구성 가능, 여러개 구성 가능</h5>
+    <h5 class="small hilight-color">Class 구분: Class 선택자, 한 페이지에 여러 Class 구성 가능, 여러개 구성 가능</h5>
+    <header>
+        <h1 class="title">자손 선택자 (공백)</h1>
+    </header>
+    <section>
+        <h1 class="title">자손 선택자</h1>
+    </section>
+    <nav>
+        <ul>
+            <li><a href="">자식 선택자 (>)</a>
+                <ul>
+                    <li><a href="">Sub 자식 선택자</a></li>
+                    <li><a href="">Sub 자식 선택자</a></li>
+                </ul>
+            </li>
+            <li><a href="">자식 선택자</a>
+        </ul>
+    </nav>
+    <section>
+        <h5>인접 형제 선택자: 인접(A+B)</h5>
+        <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+        </ul>
+        <h3>인접 형제 선택자: 이하(A~B)</h3>
+        <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+        </ul>
+        <h6>인접 형제 선택자</h6>
+        <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+        </ul>
+
+        <h2>속성 선택자</h2>
+        <a href="" class="inner_sm">link (^= start with)</a>
+        <a href="" target="_blank">naver</a>
+        <a href="" target="_blank">daum</a>
+        <a href="" target="_self" class="inner_big">google</a>
+        <a href="https://www.w3schools.com/cssref/css_selectors.php">CSS Selector 참고 사이트</a>
+
+        <h3>의사 클래스 선택자 (Tab으로 Focus)</h3>
+        <form>
+            <input type="text">
+            <button>send</button>
+        </form>
+    </section>
+</body>
+
+</html>

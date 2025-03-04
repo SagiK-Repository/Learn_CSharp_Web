@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 기본 문법</title>
+    <link rel="stylesheet" href="01.css">
+    <style>
+        #desc{
+            color:silver;
+        }
+        .main-content h2{
+            color:red !important;
+        }
+        h2{
+            color:blue;
+        }
+        h2{
+            color:green;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>선택자 우선순위</h2>
+    <section class="main-content">
+        <h2>1. 동일한 선택자, 최근, 아래에 스타일 정의할 수록 우선순위 높다</h2>
+        <h2 id="desc">2. 얼마나 구체적으로 선택했는가</h2>
+        <h2 style="color:violet">
+            * < tab < class < id < inline style < ! important
+        </h2>
+    </section>
+</body>
+
+</html>
