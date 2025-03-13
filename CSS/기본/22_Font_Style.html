@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Style</title>
+    <style>
+        /* font-size */
+        h1 {
+            font-size: 150%; /*%이긴 한데 정햊져 있는 값입니다.*/
+        }
+        .xx-small {
+            font-size: xx-small;
+        }
+        .x-small {
+            font-size: x-small;
+        }
+        .small {
+            font-size: small;
+        }
+        .medium {
+            font-size: medium;
+        }
+        .large {
+            font-size: large;
+        }
+        .x-large {
+            font-size: x-large;
+        }
+        .xx-large {
+            font-size: xx-large;
+        }
+        .xxx-large {
+            font-size: xxx-large;
+        }
+
+        /* font-weight */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;500;700&display=swap');
+        body{
+            font-family: 'Roboto', sans-serif;
+        }
+        .weight1 {
+            font-weight: 100;
+        }
+        .weight2 {
+            font-weight: 500;
+        }
+        .weight3 {
+            font-weight: 700;
+        }
+        .thin {
+            font-weight: 100;
+        }
+        .light {
+            font-weight: light;
+        }
+        .normal {
+            font-weight: normal;
+        }
+        .medium {
+            font-weight: medium;
+        }
+        .bold {
+            font-weight: bold;
+        }
+
+        /* text-decoration */
+        .none a{
+            text-decoration: none;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+        .overline {
+            text-decoration: overline;
+        }
+        .line-through {
+            text-decoration: line-through;
+        }
+        .blink {
+            text-decoration: underline blink;
+        }
+        .double {
+            text-decoration: underline double red;
+        }
+        .dotted {
+            text-decoration: underline dotted red;
+        }
+        .dashed {
+            text-decoration: underline dashed red;
+        }
+        .wavy {
+            text-decoration: underline wavy red;
+        }
+        .both {
+            text-decoration: overline underline solid red;
+        }
+
+        /* font-style */
+        em, adress {
+            font-style: normal;
+        }
+        h2 {
+            font-style: italic;
+        }
+        h3 {
+            font-style: oblique;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>글자 크기</h1>
+    <p class="xx-small">글자 크기 : xx-small</p>
+    <p class="x-small">글자 크기 : x-small</p>
+    <p class="small">글자 크기 : small</p>
+    <p class="medium">글자 크기 : medium </p>
+    <p class="large">글자 크기 : large </p>
+    <p class="x-large">글자 크기 : x-large </p>
+    <p class="xx-large">글자 크기 : xx-large </p>
+    <p class="xxx-large">글자 크기 : xxx-large </p>
+    <p style="font-size:3vw" >글자 크기 3vw, Browser의 크기가 정해져 있을 때 (Tablet) 사용</p>
+    <p style="font-size:2vh" >글자 크기 2vh</p>
+
+    <h1>글자 두께</h1>
+    <p class="weight1">글자 두께 : 100</p>
+    <p class="weight2">글자 두께 : 500</p>
+    <p class="weight3">글자 두께 : 700</p>
+    <p class="thin">thin</p>
+    <p class="light">light</p>
+    <p class="normal">normal</p>
+    <p class="medium">medium</p>
+    <p class="bold">bold</p>
+
+    <h1>글자 장식</h1>
+    <p class="none"><a href="">text-decoration:none</a></p>
+    <p class="underline">text-decoration:underline</p>
+    <p class="overline">text-decoration:overline</p>
+    <p class="line-through">text-decoration:line-through</p>
+    <p class="blink">text-decoration:blink</p>
+    <p class="double">text-decoration:double</p>
+    <p class="dotted">text-decoration:dotted</p>
+    <p class="dashed">text-decoration:dashed</p>
+    <p class="wavy">text-decoration:wavy</p>
+    <p class="both">text-decoration:overline underline</p>
+
+    <h1>글자 스타일</h1>
+    <p>
+        <em>Lorem ipsum dolor</em> sit amet consectetur adipisicing elit. Quisquam, <strong>quasi</strong>.
+        tenetur aspernatur
+    </p>
+    <address>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit in quidem aliquam impedit eaque. Sed culpa fugiat optio fugit velit natus, eius quasi. Officiis ullam accusamus beatae nihil necessitatibus voluptatum?
+        </p>
+        <strong>홍길동</strong> 서울시 강남구
+    </address>
+    <h2>Italic</h2>
+    <h3>Oblique</h3>
+
+</body>
+
+</html>
