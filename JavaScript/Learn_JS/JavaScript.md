@@ -1,0 +1,46 @@
+- 교육 링크 : https://ko.javascript.info/#tab-3
+
+# JavaScript
+- 유래에 대한 잡지식
+  - 처음 자바스크립트가 만들어졌을 때는 'LiveScript’라는 이름으로 불렸습니다. 
+- 특징
+  - 메모리나 CPU 같은 저수준 영역의 조작을 허용하지 않습니다
+  - HTML 관련 추가/수정
+  - 사용자 이벤트 (마우스 클릭, 키보드 눌림)
+  - 네트워크 서버 요청 및 파일 다운/업로드 (AJAX, COMET)
+  - 쿠키, 사용자 메시지, 클라이언트 데이터 저장 (Local)
+- 제약
+  - OS로부터 쓰기 일기 제약 (사용자의 명시적인 허가가 있어야 합니다)
+  - 브라우저 탭과 창의 정보를 서로 모른다. (동일 출처 정책 (Same Origin Policy))
+    - 두 페이지간 데이터 교환은 동의가 필요
+  - 타 사이트나 도메인에서 데이터 받아오는 것이 불가능. (보안에 의한 제약사항)
+- 강점
+  - HTML/CSS와 완전 통합
+  - 간단한 일 처리
+  - 모든 브라우저 지원
+- 확장
+  - CoffeeScript: 짧고 명료하고 이해하기 쉽다. Ruby개발자들 활용.
+  - TypeScript: 개발 단순화, 자료형의 명시화. Microsoft에서 개발.
+  - Flow: 자료형 강조. Facebook에서 개발.
+  - Dart: 모바일 앱과 같은 브라우저 아닌 환경에서 동작. Google 개발.
+- 주요 문서
+  - 명세서 : [ECMA-262 명세서(specification)](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
+  - 매뉴얼 : [MDN JavaScript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
+  - 호환성 표
+    - http://caniuse.com 브라우저가 특정 기능을 지원하는지 확인.
+    - http://caniuse.com/#feat=cryptography 암호화 관련 기능인 cryptography를 특정 브라우저에서 사용할 수 있는지 아닌지를 확인.
+    - https://kangax.github.io/compat-table 기능 목록 가능 여부 제공.
+- IDE
+  - [Visual Studio Code](https://code.visualstudio.com/)
+  - [WebStorm](http://www.jetbrains.com/webstorm/)
+- 경량 에디터
+  - [Atom](https://atom.io/) (크로스 플랫폼, 무료)
+  - [Visual Studio Code](https://code.visualstudio.com/) (크로스 플랫폼, 무료)
+  - [Sublime Text](http://www.sublimetext.com/) (크로스 플랫폼, 셰어웨어)
+  - [Notepad++](https://notepad-plus-plus.org/) (Windows, 무료)
+  - [Vim](http://www.vim.org/)이나 [Emacs](https://www.gnu.org/software/emacs/)도 에디터로 사용법만 잘 숙지하면 충분히 에디터 역할을 잘합니다.
+- 브라우저
+  - 대부분의 개발자는 Chrome이나 Firefox를 이용해 개발하는 걸 선호
+  - [Chrome Example](https://ko.javascript.info/article/devtools/bug.html) : F12 -> Console 
+
+---
