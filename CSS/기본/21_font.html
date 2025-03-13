@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 기본 문법</title>
+    <style>
+        @font-face {
+            font-family: 'HYPost';
+            src: url(font/H2PORL.TTF) format('truetype');
+        }
+        @font-face {
+            font-family: 'Nanum Ghotic';
+            /*src: url(font/NanumGothic.otf) format('woff');*/
+            src: url(font/NanumGothic.ttf) format('truetype'); 
+            src: url(font/NanumGothic.otf) format('opentype'); 
+        }
+        body{
+            font-family: '돋음', dotum, Helvetica, sans-serif; /*돋음 폰트 없으면 dotum, 없으면 Helvetica, 없으면 sans-serif*/
+        }
+        .target{
+            font-family: 'HYPost', 'Nanum Ghotic', sans-serif;
+        }
+
+        /* fonts.google.com */
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&display=swap');
+        h2{
+            font-family: '"Nanum Myeongjo', sans-serif;
+        }
+    </style>
+    
+    <!-- fonts.google.com -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>폰트 적용</h1>
+    <p class="target">
+        폰트 불러오는 2가지 방법, 1) 서버 업로드, 2) 구글, 어도비 웹 폰트
+    </p>
+    <h2>구글 폰트 적용</h2>
+    <h3>web font generator를 통해 Font 데모 html,css파일을 얻을 수 있습니다.</h3>
+</body>
+
+</html>
