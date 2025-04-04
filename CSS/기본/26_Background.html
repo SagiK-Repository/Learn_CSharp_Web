@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background</title>
+    <style>
+        .bg {
+            width: 200px;
+            height: 50px;
+            border: 1px solid black;
+            color: white;
+            font-weight: bold;
+            font-size: 1.0em;
+            display: inline-block;
+        }
+        .bg1 {
+            background-color: blue;
+        }
+        .bg2 {
+            background-color: rgb(0, 0, 255);
+        }
+        .bg3 {
+            background-color: rgba(0, 0, 255, 0.5);
+        }
+        .bg4 {
+            background-color: #00f;
+        }
+        .bg5 {
+            background-color: #0000ff;
+        }
+        .opacity {
+            opacity: 0.5;
+        }
+
+        .bgimg {
+            width: 300px;
+            height: 200px;
+            color:#ddd;
+            font-size: 1.0em;
+            font-weight: bold;
+            display: inline-block;
+            border: 1px solid black;
+            background-image: url(26_background.png);
+        }
+        .no-repeat {
+            background-repeat: no-repeat;
+        }
+        .repeat-x {
+            background-repeat: repeat-x;
+        }
+        .repeat-y {
+            background-repeat: repeat-y;
+        }
+
+        .szimg {
+            width: 80px;
+            height: 80px;
+            color:#ddd;
+            font-size: 1.0em;
+            font-weight: bold;
+            display: inline-block;
+            border: 1px solid black;
+            background-image: url(26_background.png);
+            background-repeat: no-repeat;
+        }
+        .size1 {
+            background-size: 100%;
+        }
+        .size2 {
+            background-size: 100%;
+        }
+        .size3 {
+            background-size: auto 100%;
+        }
+        .size4 {
+            background-size: 100% 100%;
+        }
+        .size5 {
+            background-size: contain;
+        }
+        .size6 {
+            background-size: cover;
+        }
+
+        .scbg {
+            background-image: url(26_background.png);
+            background-attachment: fixed; /*기본 scroll*/
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="border=1px solid black; background-color: #ccc; padding: 0px 10px 10px;">
+        <h1>BackGround Color</h1>
+
+        <div class="bg bg1">color name</div>
+        <div class="bg bg2">rgb color</div>
+        <div class="bg bg3">rgba color</div>
+        <div class="bg bg4">hex color</div>
+        <div class="bg bg5 opacity">hex color (글씨도 투명)</div>
+    </div>
+
+    <div>
+        <h1>Background Image</h1>
+        <div class="bgimg">background image</div>
+        <div class="bgimg no-repeat">no-repeat</div>
+        <div class="bgimg repeat-x">repeat-x</div>
+        <div class="bgimg repeat-y">repeat-y</div>
+        <div class="szimg size1">size default auto</div>
+        <div class="szimg size2">가로 100%</div>
+        <div class="szimg size3">세로 100%</div>
+        <div class="szimg size4">100% 100%</div>
+        <div class="szimg size5">contain</div>
+        <div class="szimg size6">cover</div>
+    </div>
+
+    <section class="scbg">
+        <h1>Background Attachment</h1>
+        <p>
+            hello world, did you have any trouble with the background image? I have a lot of trouble with
+            background image. I don't know how to use it. We can use background image in many ways. We can use it as a background
+            Ever use background image in a web page? I have a lot of trouble with background image. I don't know how to use it.
+            JuHyung, He has a ironman comicbook that showss the background image. I don't know how to use it. We can use background image in many ways. We can use it as a background
+        </p>
+    </div>
+</body>
+</html>
