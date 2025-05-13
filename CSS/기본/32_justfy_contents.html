@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justfy Contents</title>
+    <style>
+        .parent{
+            margin: 20px;
+            border: 1px solid;
+        }
+        .flex{
+            display: flex;
+        }
+        .row{
+            width:500px;
+        }
+        .col{
+            height: 500px;
+            width:100px;
+            flex-wrap: wrap;
+        }
+        .parent div{
+            width:50px;
+            height: 50px;
+            background: #ebebeb;
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-transform: uppercase;
+        }
+
+        .default{
+            justify-content: flex-start;
+        }
+        .flexend{
+            justify-content: flex-end;
+        }
+        .center{
+            justify-content: center;
+        }
+        .spacebtw{
+            justify-content: space-between;
+        }
+        .spaceard{
+            justify-content: space-around;
+        }
+        .spaceevl{
+            justify-content: space-evenly;
+        }
+
+        .aidefault{
+            align-items: stretch;
+        }
+        .aiflexstart{
+            align-items: flex-start;
+        }
+        .aiflexend{
+            align-items: flex-end;
+        }
+        .aicenter{
+            align-items: center;
+        }
+
+        .adefault{
+            align-content: flex-start;
+        }
+        .aflexend{
+            align-content: flex-end;
+        }
+        .acenter{
+            align-content: center;
+        }
+        .aspacebtw{
+            align-content: space-between;
+        }
+        .aspaceard{
+            align-content: space-around;
+        }
+        .aspaceevl{
+            align-content: space-evenly;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>justify-content</h2>
+    <div class="parent flex row default">
+        <div>BOX 1</div>
+        <div>Default</div>
+        <div>BOX 3</div>
+    </div>
+    <div class="parent flex row flexend">
+        <div>BOX 1</div>
+        <div>flex-end</div>
+        <div>BOX 3</div>
+    </div>
+    <div class="parent flex row center">
+        <div>BOX 1</div>
+        <div>Center</div>
+        <div>BOX 3</div>
+    </div>
+    <div class="parent flex row spacebtw">
+        <div>BOX 1</div>
+        <div>space-between</div>
+        <div>BOX 3</div>
+    </div>
+    <div class="parent flex row spaceard">
+        <div>BOX 1</div>
+        <div>space-around</div>
+        <div>BOX 3</div>
+    </div>
+    <div class="parent flex row spaceevl">
+        <div>BOX 1</div>
+        <div>space-evenly</div>
+        <div>BOX 3</div>
+    </div>
+
+    <h2>aligh-items</h2>
+    <div class="flex">
+        <div class="parent flex col aidefault">
+            <div>BOX 1</div>
+            <div>Default</div>
+            <div>BOX 3</div>
+        </div>
+        <div class="parent flex col aiflexstart">
+            <div>BOX 1</div>
+            <div>flex-start</div>
+            <div>BOX 3</div>
+        </div>
+        <div class="parent flex col aiflexend">
+            <div>BOX 1</div>
+            <div>flex-end</div>
+            <div>BOX 3</div>
+        </div>
+        <div class="parent flex col aicenter">
+            <div>BOX 1</div>
+            <div>Center</div>
+            <div>BOX 3</div>
+        </div>
+    </div>
+
+    <h2>aligh-content</h2>
+    <div class="flex">
+        <div class="parent flex col adefault">
+            <div>BOX 1</div>
+            <div>Default</div>
+            <div>BOX 3</div>
+        </div>
+        <div class="parent flex col aflexend">
+            <div>BOX 1</div>
+            <div>flex-end</div>
+            <div>BOX 3</div>
+        </div>
+        <div class="parent flex col acenter">
+            <div>BOX 1</div>
+            <div>Center</div>
+            <div>BOX 3</div>
+        </div>
+        <div class="parent flex col aspacebtw">
+            <div>BOX 1</div>
+            <div>space-between</div>
+            <div>BOX 3</div>
+        </div>
+        <div class="parent flex col aspaceard">
+            <div>BOX 1</div>
+            <div>space-around</div>
+            <div>BOX 3</div>
+        </div>
+        <div class="parent flex col aspaceevl">
+            <div>BOX 1</div>
+            <div>space-evenly</div>
+            <div>BOX 3</div>
+        </div>
+    </div>
+</body>
+
+</html>
