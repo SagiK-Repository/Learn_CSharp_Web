@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Fill</title>
+    <style>
+        .parent{
+            margin: 20px;
+            border: 1px solid;
+            display: flex;
+            width:500px;
+            flex-wrap: wrap;
+        }
+        .parent div{
+            height: 50px;
+            background: #ebebeb;
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-transform: uppercase;
+        }
+
+        .grow{
+            flex-grow:1
+        }
+        .shrink div:last-child{
+            flex-shrink: 2;
+        }
+        .parent .basis{
+            flex-basis: 0;
+        }
+        .all div{
+            flex: 1 1 0;
+        }
+
+        .example div:first-child{
+            flex: 1;
+        }
+        .example div:nth-child(2){
+            flex: 1;
+        }
+        .example div:nth-child(3){
+            flex: 2;
+        }
+
+        .hover div{
+            flex:1;
+            transition: 0.3s;
+        }
+        .hover div:hover{
+            flex:2;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>flex-grow</h2>
+    <p>모자른 공간을 늘려서 채우는 속성</p>
+    <div class="parent">
+        <div>Box 1</div>
+        <div>Box 2</div>
+        <div class="grow">Grow</div>
+    </div>
+    
+    <h2>flex-shrink</h2>
+    <p>넘치는 공간을 줄여서 채우는 속성 (기본 1)</p>
+    <div class="parent shrink">
+        <div>Box 1</div>
+        <div>Box 2</div>
+        <div>Shrink (default )</div>
+    </div>
+
+    <h2>flex-basis</h2>
+    <p>크기 지정</p>
+    <div class="parent">
+        <div>Box 1</div>
+        <div>Box 2</div>
+        <div class="basis">Basis (set width)</div>
+    </div>
+    
+    <h2>flex-all</h2>
+    <div class="parent all">
+        <div>Box 1</div>
+        <div>Box 2</div>
+        <div>Box 3</div>
+    </div>
+
+    <h2>flex-example (1:1:2)</h2>
+    <div class="parent example">
+        <div>Box 1</div>
+        <div>Box 2</div>
+        <div>Box 3</div>
+    </div>
+
+    <h2>mouse hover</h2>
+    <div class="parent hover">
+        <div>Box 1</div>
+        <div>Box 2</div>
+        <div>Box 3</div>
+    </div>
+</body>
+</html>
