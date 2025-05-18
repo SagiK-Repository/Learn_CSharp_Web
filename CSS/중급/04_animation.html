@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .box {
+            width:100px; height: 100px;
+            background:green;
+            animation-name: changecolor;
+            animation-duration: 2s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 2;
+            animation-direction: alternate-reverse;
+            animation-timing-function: esae-in;
+        }
+        .box1 {
+            width:100px; height: 100px;
+            background:green;
+            animation: changecolor 2 10s 1s forwards alternate-reverse ease-in;
+            /*2s 1s 이외에는 순서 무관*/
+        }
+        @keyframes changecolor {
+            from { background-color: green; }
+            50% { background-color: blue; animation-timing-function: ease-out; }
+            to { background-color: yellow; }
+        }
+
+        header > * {
+            animation:fadeup 0.5s forwards;
+            position: relative;
+            top: 40px;
+            opacity: 0;
+        }
+        header p {
+            animation-duration: 5s;
+        }
+        @keyframes fadeup {
+            from { opacity: 0; top:40px; }
+            to {opacity: 1; top: 0px; }
+        }
+    </style>
+</head>
+
+<body>
+   <div class="box">box</div>
+   <div class="box1">box</div>
+   <header>
+    <h3>animation-direction</h3>
+    <p>normal: 0% -> 100% 순방향 </p>
+    <p>reverse: 100% -> 0% 역방향 </p>
+    <p>alternate: 0% -> 100% -> 0% </p>
+    <p>alternate-reverse: 100% -> 0% -> 100% </p>
+   </header>
+</body>
+
+</html>
