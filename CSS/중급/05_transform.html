@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        img {
+            transition: 0.4s;
+        }
+
+        .image1:hover img {
+            transform: translateY(50px);
+        }
+
+        .image2:hover img {
+            transform: translate(50px, -50px);
+        }
+
+        .perspective {
+            perspective: 1000px;
+            perspective-origin: 0 0; /*50% 50%*/
+        }
+
+        .image3:hover img {
+            transform: translateZ(100px);
+        }
+
+        .image4:hover img {
+            transform: translate3d(50px, 50px, 100px);
+        }
+
+        .image5:hover img {
+            transform: scale(1.5, 1.2);
+        }
+
+        .image6 img {
+            perspective-origin: 50% 50%;
+            transform: perspective(500px) scaleZ(1) translateZ(100px);
+        }
+        .image6:hover img {
+            transform: perspective(500px) scaleZ(2) translateZ(100px);
+        }
+
+        .image7:hover img {
+            transform: rotate(45deg);
+        }
+
+        .image8:hover img {
+            transform: skewY(-20deg) scaleX(2);
+        }
+
+        .image9:hover img {
+            transform: rotateX(45deg) skewY(-20deg) scaleX(2);
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <a href="https://ianlunn.github.io/Hover/">
+        <p>Hover.css</p>
+    </a>
+
+    <h2>Transform</h2>
+    <div>
+        <figure class="image1">
+            <img src="./03_translate.png" alt=""/>
+            <figcaption>transform: translateY(50px);</figcaption>
+        </figure>
+        <figure class="image2">
+            <img src="./03_translate.png" alt=""/>
+            <figcaption>transform: translate(50px, -50px);</figcaption>
+        </figure>
+        <figure class="image3 perspective">
+            <img src="./03_translate.png" alt=""/>
+            <figcaption>transform: translateZ(100px);</figcaption>
+        </figure>
+        <figure class="image4 perspective">
+            <img src="./03_translate.png" alt=""/>
+            <figcaption>transform: translate3d(50px, 50px, 100px);</figcaption>
+        </figure>
+        <figure class="image5">
+            <img src="./03_translate.png" alt=""/>
+            <figcaption>transform: scale(1.5, 1.2);</figcaption>
+        </figure>
+        <figure class="image6">
+            <img src="./03_translate.png" alt=""/>
+            <figcaption>transform: perspective(500px) scaleZ(2) translateZ(100px);</figcaption>
+        </figure>
+        <figure class="image7">
+            <img src="./03_translate.png" alt=""/>
+            <figcaption>transform: rotate(45deg);</figcaption>
+        </figure>
+        <figure class="image8">
+            <img src="./03_translate.png" alt=""/>
+            <figcaption>transform: skewY(-20deg) scaleX(2);</figcaption>
+        </figure>
+        <figure class="image9 perspective">
+            <img src="./03_translate.png" alt=""/>
+            <figcaption>transform: rotateX(45deg) skewY(-20deg) scaleX(2);</figcaption>
+        </figure>
+    </div>
+   
+</body>
+
+</html>
