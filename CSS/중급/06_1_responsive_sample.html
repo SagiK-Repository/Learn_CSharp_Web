@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./06_1_main.css" />
+    <link rel="stylesheet" href="./06_1_responsive.css" />
+
+    <title>Responsive</title>
+    <style>
+        #wrapper {
+            background-color: silver;
+            width: 960p;
+            margin: auto;
+        }
+        section:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        aside {
+            width: 350px; height: 200px;
+            background: green;
+            float: left;
+            color: white;
+        }
+
+        article {
+            width: 550px; height: 200px;
+            background: green;
+            float: right;
+            color: white;
+        }
+
+        @media screen and (max-width: 960px) {
+            #wrapper {
+                width: 100%;
+            }
+            aside { width: 36.5%; }
+            article { width: 57.2%; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <Header>
+            <h1>header</h1>
+        </Header>
+        <section>
+            <h1>section</h1>
+            <aside>
+                <h1>sub</h1>
+            </aside>
+            <article>
+                <h1>article</h1>
+            </article>
+        </section>
+        <footer>
+            <h1>footer</h1>
+        </footer>
+    </div>
+
+</body>
+
+</html>
