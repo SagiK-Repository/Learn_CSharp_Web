@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+    <style>
+        @media screen and (min-width:768px) {
+            #wrapper {
+                background-color: silver;
+            }
+        }
+        @media (max-width:767px) {
+            #wrapper {
+                background-color: blue;
+                color: white;
+            }
+        }
+        @media (max-width:480px) {
+            #wrapper {
+                background-color: green;
+                color: white;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://www.w3schools.com/css/css_rwd_viewport.asp">
+        <p>Responsive Web Design - Viewport</p>
+    </a>
+
+    <div id="wrapper">
+        <Header>
+            <h1>header</h1>
+        </Header>
+        <section>
+            <h1>section</h1>
+        </section>
+        <footer>
+            <h1>footer</h1>
+        </footer>
+    </div>
+
+    <img src="06_responsive.png"/>
+</body>
+
+</html>
