@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Responsive</title>
+    <style>
+        header nav {
+            display: block;
+            float: right;
+        }
+        header h1 {
+            display: block;
+            float: left;
+        }
+        header nav ul li {
+            float: left;
+            list-style: none;
+            margin-left: 20px;
+        }
+        header nav ul li a {
+            text-decoration: none;
+            line-height: 60px;
+        }
+        @media screen and (max-width: 960px) {
+            .container {
+                width: 100%;
+                padding: 0 15px;
+                box-sizing: border-box;
+            }
+        }
+        @media screen and (max-width: 640px) {
+            header h1, header nav {
+                float: none;
+            }
+            header h1 {
+                text-align: center;
+            }
+            header nav ul li {
+                margin-right: 20px;
+            }
+            header nav {
+                text-align: center;
+            }
+            header nav ul {
+                display: inline-block;
+                padding: 0;
+            }
+        }
+
+        section:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container clearfix">
+            <h1><a href="#">Logo</a></h1>
+            <nav>
+                <ul class="clearfix">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section></section>
+
+    <footer>
+        <h2>지시사항</h2>
+        <p>1. 960px 이하에서는 좌우 여백 15px, 로고는 왼쪽 메뉴는 오른쪽을 유지</p>
+        <p>2. 640px 이하에서는 로고 가운데, 메뉴는 로고 밑에 배치</p>
+        <p>3. 640ox 이하에서 로고 사이 간격은 40px 유지, 가운데 배치한다.</p>
+    </footer>
+    
+</body>
+
+</html>
