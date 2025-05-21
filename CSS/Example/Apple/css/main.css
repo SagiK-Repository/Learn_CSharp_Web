@@ -1,0 +1,89 @@
+@import url('normalize.css');
+@import url('reset.css');
+
+/* Layout */
+
+/* Typography */
+
+/* Link & Button */
+i {
+    font-size:15px;
+}
+
+/* Form */
+
+/*--------------------------------*/
+header {
+    width: 100%;
+    padding: 13px 22px;
+    display: center;
+    position: fixed;
+    box-sizing: border-box;
+    text-align: center;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px); /* 사파리용 */
+    background: rgba(255, 255, 255, 0.8);
+}
+header nav {
+    display: flex;
+    justify-content: center;
+}
+header nav ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+header * a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 11px;
+    font-weight: 500;
+}
+header * .menu {
+    display: none;
+}
+@media screen and (min-width: 1070px) {
+    header nav {
+        display: center;
+    }
+    header * h1:first-child {
+        margin: 0 21px 0 0;
+    }
+    header * li, h1 {
+        margin: 0 21px;
+    }
+    header * h1:last-child {
+        margin: 0 0 0 21px;
+    }
+}
+@media screen and (max-width: 1069px) {
+    header nav {
+        justify-content: center;
+    }
+    header * ul{
+        justify-content: space-between;
+        width:100%;
+    }
+}
+@media screen and (max-width: 834px) {
+    header * .submenu{
+        justify-content: flex-end;
+    }
+    header * li:not(:nth-last-child(-n+1)){
+        display: none;
+    }
+    header * h1:nth-last-child(-n+2){
+        margin: 0 15px;
+    }
+    header * h1:last-child{
+        margin: 0 0 0 15px;
+    }
+    header * .menu {
+        display: block;
+    }
+    header * li {
+        margin: 0 15px;
+    }
+}
+header .fa-apple {
+    font-size:17px;
+}
