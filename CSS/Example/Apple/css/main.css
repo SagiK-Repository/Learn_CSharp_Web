@@ -131,6 +131,7 @@ header {
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px); /* 사파리용 */
     background: rgba(255, 255, 255, 0.8);
+    z-index: 1;
 }
 header nav {
     display: flex;
@@ -265,4 +266,73 @@ main .iphone-16 {
 }
 main .iphone-16 .layout *:last-child {
     margin: 5px 0 0 0;
+}
+
+main .macbook-air {
+    background: radial-gradient(
+                    farthest-corner at 0 0,
+                    #D3E9F6 0%,
+                    #E9F2F7 50%,
+                    white 100%
+                );
+}
+main .macbook-air .layout {
+    text-align: center; 
+    position: relative;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+}
+main .macbook-air > div > * {
+    display: block;
+    text-align: center;
+}
+main .macbook-air * .image {
+    margin: 0 0 43px 0;
+    display: inline-block;
+    width: 586px; height: 289px;
+    background-size : auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background: url("../image/macbook_air.png");
+}
+main .macbook-air div img {
+    display: inline-block;
+}
+@media screen and (max-width: 1068px) {
+    main .macbook-air {
+        height: 650px;
+    }
+    main .macbook-air * .image {
+        width: 506px; height: 253px;
+        background-size : auto 96%;
+    }
+}
+@media screen and (max-width: 834px) {
+    main .macbook-air {
+        height: 500px;
+    }
+    main .macbook-air * .image {
+        margin: 0;
+        width: 254px; height: 235px;
+        background: url("../image/macbook_air_mini.png");
+    }
+}
+main .macbook-air .layout *:last-child {
+    margin: 5px 0 0 0;
+}
+
+
+footer {
+    width: 100%;
+    font-size: 11px;
+    padding: 13px 22px;
+    display: center;
+    box-sizing: border-box;
+    text-align: left;
+    color: #6D6D6E;
+    background: #F5F5F7;
+    z-index: 1;
+}
+footer div {
+    max-width: 992px; 
+    margin: 0 auto;
 }
