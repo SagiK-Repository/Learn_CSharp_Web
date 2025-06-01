@@ -10,6 +10,12 @@ section + section {
     margin-top: 12px;
 }
 
+hr {
+  border: none;
+  height: 1px;
+  background-color: #CECECF;
+}
+
 /* Typography */
 @font-face {
     font-family: 'SF-PRO';
@@ -116,6 +122,9 @@ i {
         padding: 7px 15px;
         line-height: calc(100% + 2px);
     }
+}
+a.blue-link {
+    color: #0066CC;
 }
 
 /* Form */
@@ -324,7 +333,7 @@ main .macbook-air .layout *:last-child {
 footer {
     width: 100%;
     font-size: 11px;
-    padding: 13px 22px;
+    padding: 19px 22px;
     display: center;
     box-sizing: border-box;
     text-align: left;
@@ -335,4 +344,62 @@ footer {
 footer div {
     max-width: 992px; 
     margin: 0 auto;
+}
+footer .footer-menu > div > p {
+    font-size: 12px;
+    padding: 23px 0 7px 0;
+    font-weight: bold;
+    color: #1E1E1E;
+}
+footer .footer-menu li {
+    padding: 7px 0 7px 0;
+}
+footer .footer-menu li a {
+    text-decoration: none;
+    color: #444445;
+}
+footer .footer-menu {
+    margin: -18px 0 28px 0;
+    height: 400px;
+    width: 196px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+}
+footer .footer-menu div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+footer .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+footer .footer-links .footer-links-menu {
+  position: relative;
+  padding: 0 10px;
+}
+footer .footer-links .footer-links-menu > *:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 14px;
+  background-color: #ccc;
+}
+
+
+footer .footer-links > *:first-child {
+    width: 30%;
+    box-sizing: border-box;
+}
+footer .footer-links > *:nth-child(2) {
+    width: 39%;
+    box-sizing: border-box;
+}
+footer .footer-links > *:last-child {
+    width: 30%;
+    box-sizing: border-box;
+    text-align: right;
 }
