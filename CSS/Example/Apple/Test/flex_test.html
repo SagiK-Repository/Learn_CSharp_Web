@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>side problem</title>
+    <style>
+        footer {
+            display: center;
+            box-sizing: border-box;
+            text-align: left;
+        }
+        .box{
+            max-width: 920px;
+            height: 500px;
+            background: gray;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            flex-direction: column;
+            align-content: space-between; 
+        }
+        .box div{
+            max-width: 350px;
+            width: 100%;
+            background: #ebebeb;
+            border: #ccc 1px solid;
+            padding: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <footer>
+        <h2>Flex Direction</h2>
+        <div class="box">
+            <div>
+                <p>Row-Flex 1</p>
+                <p>Test 1</p>
+                <p>Test 2</p>
+            </div>
+            <div>
+                <p>Row-Flex 2</p>
+                <p>Test 1</p>
+                <p>Test 2</p>
+                <p>Test 3</p>
+            </div>
+            <div>
+                <p>Row-Flex 3</p>
+                <p>Test 1</p>
+            </div>
+            <div>
+                <p>Row-Flex 3</p>
+                <p>Test 1</p>
+            </div>
+            <div>
+                <p>Row-Flex 2</p>
+                <p>Test 1</p>
+                <p>Test 2</p>
+                <p>Test 3</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
