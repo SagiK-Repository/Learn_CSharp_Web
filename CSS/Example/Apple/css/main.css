@@ -357,7 +357,12 @@ footer > div {
     max-width: 992px; 
     margin: 0 auto;
 }
-footer .footer-menu > div > p {
+footer .footer-menu input,
+footer .footer-menu i {
+    display: none;
+    font-size: 11px;
+}
+footer .footer-menu > div * p {
     font-size: 12px;
     padding: 23px 0 7px 0;
     font-weight: bold;
@@ -381,6 +386,7 @@ footer .footer-menu {
     flex-direction: column;
     align-items: flex-start;
 }
+
 footer .footer-links {
     display: flex;
     flex-wrap: wrap;
@@ -401,7 +407,6 @@ footer .footer-links .footer-links-menu > *:not(:first-child)::before {
 footer .footer-links .footer-links-menu > *:not(:first-child) {
     padding-left: 16px;
 }
-
 
 footer .footer-links > p { order: 1; }
 footer .footer-links > p {
@@ -455,4 +460,75 @@ footer .footer-links > a {
     footer div > hr:last-of-type { display: none; }
     footer br:nth-last-of-type(2),
     footer br:nth-last-of-type(3) { display: none; }
+}
+
+@media screen and (max-width: 833px) {
+    footer .footer-menu {
+        height: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: stretch;
+    }
+    footer .footer-menu ul {
+        margin-left: 14px;
+        visibility: hidden;
+        max-height: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    footer .footer-menu li {
+        visibility: hidden;
+        max-height: 0;
+        transform: translateY(-500%);
+        transition: transform 0.4s ease, padding 0.3s ease;
+    }
+    footer .footer-menu div:first-child{
+        padding-top:32px;
+    }
+    footer .footer-menu div{
+        max-width: 100%;
+        padding: 0;
+    }
+    footer .footer-menu label {
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+    footer .footer-menu label p {
+        font-size: 11px;
+        padding:0;
+        user-select: none;
+        font-weight: normal;
+    }
+    footer .footer-menu hr {
+      width: 100%;
+      height: 1px;
+      background-color: #CECECF;
+      border: none;
+      margin: 13px 0;
+    }
+    footer input:checked ~ ul {
+        margin: 14px 5px 0 5px;
+        user-select: none;
+        visibility: visible;
+        max-height: 100%;
+    }
+    footer input:checked ~ ul > li {
+        user-select: none;
+        visibility: visible;
+        transform: translateY(0);
+        max-height: 100%;
+    }
+    footer .footer-menu i {
+        display: inline-block;
+    }
+    footer input:checked + label .open-icon {
+        display: none;
+    }
+    footer input:checked + label .close-icon {
+        display: inline;
+    }
+    footer input:not(:checked) + label .close-icon {
+        display: none;
+    }
 }
