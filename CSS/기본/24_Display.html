@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 기본 문법</title>
+    <link rel="stylesheet" href="01.css">
+    <style>
+        h2{
+            display:none;
+        }
+        h3{
+            visibility: hidden; /* 요소는 공간을 차지하지만 보이지 않음 */
+        }
+        h4{
+            opacity: 0;
+        }
+
+        span {
+            width: 50%;
+            display: block;  /* 원래 inline 속성이었지만 block으로 변경 */
+            background: green;
+            color: white;
+        }
+        .box {
+            width: 50%;
+            display: inline; /* 원래 block 속성이었지만 inline-block으로 변경 */
+            background: blue;
+            color: white;
+        }        
+        .menu {
+            text-align: center;
+        }
+        .menu li{
+            width: 150px;
+            padding: 10px;
+            background: gray;
+            line-height: 40px;
+            list-style: none;
+            text-align:center;
+            display:inline-block;
+        }
+        img{
+            width:200px;
+            height: auto;
+        }
+        .portfolio {
+            text-align: center;
+            display:table;
+            width:100%;
+            padding: 0;
+        }
+        .portfolio li{
+            width:25%;
+            line-height: 40px;
+            background: gray;
+            list-style: none;
+            display: table-cell;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Display none</h2>
+    <h3>Visibility hidden</h3>
+    <h4>Opacity 0%</h4>
+
+    <div class="box">block level element</div>
+    <div class="box">block level element</div>
+    <span>inline level element</span>
+    <span>inline level element</span>
+
+    <ul class="menu">
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+    </ul>
+    <hr>
+    <img src="https://via.placeholder.com/100" alt=""> 
+    <img src="https://via.placeholder.com/100" alt="">
+    <hr>
+    
+    <ul class="portfolio">
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+    </ul>
+</body>
+</html>

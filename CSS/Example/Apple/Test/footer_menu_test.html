@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Menu Test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        footer {
+            display: center;
+            box-sizing: border-box;
+            text-align: left;
+        }
+        .box{
+            max-width: 920px;
+            height: 500px;
+            background: gray;
+            display: flex;
+            margin: 0 auto;
+            flex-direction: column;
+
+            height: 100%;
+            flex-wrap: nowrap;
+            align-items: stretch;
+        }
+        .box div{
+            max-width: 350px;
+            width: 100%;
+            background: #ebebeb;
+            border: #ccc 1px solid;
+            padding: 0px;
+            overflow: hidden;
+        }
+        
+        
+        .box input {
+            display: none;
+        }
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        label p {
+            user-select: none;
+        }
+        .box input:checked ~ ul {
+            user-select: none;
+            visibility: visible;
+            transform: translateY(0);
+            max-height: 100%;
+        }
+        footer ul {
+            margin:0;
+            visibility: hidden;
+            max-height: 0;
+            padding: 0;
+            margin-left: 14px;
+            transform: translateY(-50%);
+            transition: transform 0.4s ease, padding 0.3s ease;
+        }
+        label {
+            cursor: pointer;
+        }
+        input:checked + label .open-icon {
+            display: none;
+        }
+        input:checked + label .close-icon {
+            display: inline;
+        }
+        input:not(:checked) + label .close-icon {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <footer>
+        <h2>Footer Menu Animation</h2>
+        <div class="box">
+            <div>
+                <div class="box">
+                    <input type="checkbox" id="toggle1" hidden>
+                    <label for="toggle1">
+                        <p>
+                            Row-Flex 1
+                            <i class="fa-solid fa-bars open-icon"></i>
+                            <i class="fa-solid fa-xmark close-icon"></i>
+                        </p>
+                    </label>
+                    <ul>
+                        <li><a href="#">Test 1</a></li>
+                        <li><a href="#">Test 2</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxModel</title>
+    <style>
+        .box {
+            width:800px;
+        }
+        .border {
+            border: 10px solid #ccc;
+        }
+        .padding {
+            padding: 20px;
+        }
+        .margin {
+            margin: 50px;
+        }
+        .bg {
+            background-color: green;
+            border-style: dashed;
+        }
+        .content-box {
+            margin:50px auto;
+            box-sizing: content-box;
+        }
+        .border-box {
+            margin:50px auto;
+            box-sizing: border-box;
+        }
+
+        .superborder {
+            width: 500px;
+            padding: 20px;
+            margin:50px auto;
+            border-width: 50px 20px 10px;
+            border-style: solid dashed dotted;
+            border-color: #ccc #000 #F00;
+            border-right: 10px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Box Model</h1>
+
+    <div class="box">
+        <h2>Box Content</h2>
+        <p>hello world, did you have any trouble with the background image? I have a lot of trouble with background image. I don't know how to use it. We can use background image in many ways. We can use it as a background Ever use background image in a web page? I have a lot of trouble with background image. I don't know how to use it. JuHyung, He has a ironman comicbook that showss the background image. I don't know how to use it. We can use background image in many ways. We can use it as a background</p>
+    </div>
+    
+    <div class="box border">
+        <h2>Box Border</h2>
+        <p>hello world, did you have any trouble with the background image? I have a lot of trouble with background image. I don't know how to use it. We can use background image in many ways. We can use it as a background Ever use background image in a web page? I have a lot of trouble with background image. I don't know how to use it. JuHyung, He has a ironman comicbook that showss the background image. I don't know how to use it. We can use background image in many ways. We can use it as a background</p>
+    </div>
+    
+    <div class="box border padding">
+        <h2>Box Padding</h2>
+        <p>hello world, did you have any trouble with the background image? I have a lot of trouble with background image. I don't know how to use it. We can use background image in many ways. We can use it as a background Ever use background image in a web page? I have a lot of trouble with background image. I don't know how to use it. JuHyung, He has a ironman comicbook that showss the background image. I don't know how to use it. We can use background image in many ways. We can use it as a background</p>
+    </div>
+    
+    <div class="box border margin">
+        <h2>Box Margin</h2>
+        <p>hello world, did you have any trouble with the background image? I have a lot of trouble with background image. I don't know how to use it. We can use background image in many ways. We can use it as a background Ever use background image in a web page? I have a lot of trouble with background image. I don't know how to use it. JuHyung, He has a ironman comicbook that showss the background image. I don't know how to use it. We can use background image in many ways. We can use it as a background</p>
+    </div>
+
+    <div class="box border margin bg">
+        <h2>Box Background Region (Border 까지가 Background의 범위) </h2>
+        <p>hello world, did you have any trouble with the background image? I have a lot of trouble with background image. I don't know how to use it. We can use background image in many ways. We can use it as a background Ever use background image in a web page? I have a lot of trouble with background image. I don't know how to use it. JuHyung, He has a ironman comicbook that showss the background image. I don't know how to use it. We can use background image in many ways. We can use it as a background</p>
+    </div>
+
+    <div class="box border margin content-box">
+        <h2>Box Content-Box </h2>
+        <p>hello world, did you have any trouble with the background image? I have a lot of trouble with background image. I don't know how to use it. We can use background image in many ways. We can use it as a background Ever use background image in a web page? I have a lot of trouble with background image. I don't know how to use it. JuHyung, He has a ironman comicbook that showss the background image. I don't know how to use it. We can use background image in many ways. We can use it as a background</p>
+    </div>
+
+    <div class="box border margin border-box">
+        <h2>Box Border-Box </h2>
+        <p>hello world, did you have any trouble with the background image? I have a lot of trouble with background image. I don't know how to use it. We can use background image in many ways. We can use it as a background Ever use background image in a web page? I have a lot of trouble with background image. I don't know how to use it. JuHyung, He has a ironman comicbook that showss the background image. I don't know how to use it. We can use background image in many ways. We can use it as a background</p>
+    </div>
+
+    
+    <div class="box border margin" style="padding:0px">
+        <h2>Box </h2>
+        <p>hello world, did you have any trouble with the background image? I have a lot of trouble with background image. I don't know how to use it. We can use background image in many ways. We can use it as a background Ever use background image in a web page? I have a lot of trouble with background image. I don't know how to use it. JuHyung, He has a ironman comicbook that showss the background image. I don't know how to use it. We can use background image in many ways. We can use it as a background</p>
+    </div>
+    <div class="box border margin" style="padding:100px 50px">
+        <h2>Box </h2>
+        <p>hello world, did you have any trouble with the background image? I have a lot of trouble with background image. I don't know how to use it. We can use background image in many ways. We can use it as a background Ever use background image in a web page? I have a lot of trouble with background image. I don't know how to use it. JuHyung, He has a ironman comicbook that showss the background image. I don't know how to use it. We can use background image in many ways. We can use it as a background</p>
+    </div>
+    <div class="box border margin" style="padding:100px 50px 10px">
+        <h2>Box </h2>
+        <p>hello world, did you have any trouble with the background image? I have a lot of trouble with background image. I don't know how to use it. We can use background image in many ways. We can use it as a background Ever use background image in a web page? I have a lot of trouble with background image. I don't know how to use it. JuHyung, He has a ironman comicbook that showss the background image. I don't know how to use it. We can use background image in many ways. We can use it as a background</p>
+    </div>
+    <div class="box border margin" style="padding:10px 10px 100px 100px">
+        <h2>Box </h2>
+        <p>hello world, did you have any trouble with the background image? I have a lot of trouble with background image. I don't know how to use it. We can use background image in many ways. We can use it as a background Ever use background image in a web page? I have a lot of trouble with background image. I don't know how to use it. JuHyung, He has a ironman comicbook that showss the background image. I don't know how to use it. We can use background image in many ways. We can use it as a background</p>
+    </div>
+    <div class="box border margin" style="padding-left:100px;">
+        <h2>Box </h2>
+        <p>hello world, did you have any trouble with the background image? I have a lot of trouble with background image. I don't know how to use it. We can use background image in many ways. We can use it as a background Ever use background image in a web page? I have a lot of trouble with background image. I don't know how to use it. JuHyung, He has a ironman comicbook that showss the background image. I don't know how to use it. We can use background image in many ways. We can use it as a background</p>
+    </div>
+    
+    <div class="superborder">
+        <h2>Box Border</h2>
+        <p>hello world, did you have any trouble with the background image? I have a lot of trouble with background image. I don't know how to use it. We can use background image in many ways. We can use it as a background Ever use background image in a web page? I have a lot of trouble with background image. I don't know how to use it. JuHyung, He has a ironman comicbook that showss the background image. I don't know how to use it. We can use background image in many ways. We can use it as a background</p>
+    </div>
+</body>
+</html>

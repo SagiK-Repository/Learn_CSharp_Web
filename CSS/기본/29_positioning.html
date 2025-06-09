@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning</title>
+    <style>
+        .relative {
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+
+        .banner {
+            position: absolute;
+            border: 2px solid blue;
+            padding: 20px;
+        }
+
+        .sliderwrapper {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+            background-color: #ebebeb;
+        }
+        .btn {
+            position:absolute;
+            top: 50%;
+            line-height: 50px;
+            margin-top:-25px;
+            padding: 0px 20px;
+            display:inline-block;
+            text-decoration: none;
+            color: white;
+            background-color: #333;
+        }
+        .prev{
+            right:calc(100% + 20px);
+        }
+        .next{
+            left:calc(100% + 20px);
+        }
+
+        .wrapper{
+            max-width: 900px;
+            width: 90%;;
+            margin: 0 auto;
+        }
+        .back_to_top{
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            font-weight: bold;
+            color: white;
+            padding:10px 20px;
+            background-color: #333;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .wrapper_cf {
+            max-width: 900px;
+            width: 90%;
+            margin: 0 auto;
+            background-color: #ebebeb;
+        }
+        .content {
+            float:left;
+        }
+        .wrapper_cf:after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+        .sidebar {
+            position: sticky;
+            top: 0;
+            width: 200px;
+            height: 100px;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            float:right;
+        }
+
+        .back_to_canuse{
+            position: fixed;
+            bottom: 50px;
+            left: 50px;
+            font-weight: bold;
+            color: white;
+            padding:10px 20px;
+            background-color: darkorange;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Potision</h1>
+    <p>position: static | absolute | fixed | relative | sticky</p>
+    <p>
+        1. static: 기본값, 위치를 조정할 수 없다. <br>
+        2. relative: 자기자신에 대한 상대적인 위치를 조정할 수 있다. <br>
+        3. absolute: 부모 요소에 대한 절대적인 위치를 조정할 수 있다. <br>
+        4. fixed: 브라우저 화면에 고정된 위치를 조정할 수 있다. <br>
+        5. sticky: 스크롤을 따라 움직이다가 특정 위치에서 고정된다. <br>
+    </p>
+
+    <h1>Position - relative</h1>
+
+    <figure class="relative">
+        <img src="28_img.png" alt="position: relative;">
+        <figcaption>
+            position: relative; #자기자신에 대한 내용. <br>
+            1. 위치와 크기가 변하지 않는다. <br>
+            2. 위치를 조정할 수 있다. (top, left, right, bottom) <br>
+            3. 다른 요소에 영향을 주지 않는다. (가상 위치) <br>
+        </figcaption>
+    </figure>
+    <figure>
+        <img src="28_img.png" alt="position: static;">
+        <figcaption>position: static</figcaption>
+    </figure>
+
+    <h1>Position - absolute</h1>
+
+    <section>
+        <div class="banner">
+            <img src="28_img.png" alt="position: absolute;">
+        </div>
+        <h2>absolute(절댓값) content</h2>
+        <p>
+            position: absolute; <br>
+            1. 요소의 위치를 다른 요소들이 모르게 된다. <br>
+            2. 요소의 크기가 내용 크기로 축소된다. <br>
+            3. 가까운 부모중에서 position 속성의 값이 기본값이 아닌 요소를 기준으로 배치된다. (기준이 없으면 브라우저 화면이 기준) <br>
+            4. top, left, right, bottom 속성으로 위치를 조정할 수 있다. <br>
+        </p>
+    </section>
+
+    <div class="sliderwrapper">
+        <h2>absolute, relative example</h2>
+        <a href="" class="btn prev">prev</a>
+        <a href="" class="btn next">next</a>
+    </div>
+
+    <h1>Position - fixed</h1>
+    <div class="wrapper">
+        <section>
+            <h2>fixed content</h2>
+            <p>
+                position: fixed; <br>
+                1. 요소의 위치를 다른 요소들이 모르게 된다. <br>
+                2. 요소의 크기가 내용 크기로 축소된다. <br>
+                3. 브라우저 화면을 기준으로 배치된다. <br>
+                4. top, left, right, bottom 속성으로 위치를 조정할 수 있다.<br>
+            </p>
+        </section>
+        <a href="" class="back_to_top">Top (fixed)</a>
+    </div>
+
+    <h1>Position - sticky</h1>
+
+    <div class="wrapper_cf">
+        <div class="content">
+            <p>
+                position: sticky; <br>
+                1. 요소의 위치를 다른 요소들이 모르게 된다. <br>
+                2. 요소의 크기가 내용 크기로 축소된다. <br>
+                3. 브라우저 화면이 기준이 된다. 스크롤을 따라 움직이다가 특정 위치에서 고정된다. <br>
+                4. top, left, right, bottom 속성으로 위치를 조정할 수 있다.<br>
+            </p>
+            <p> position: sticky; <br>1. 요소의 위치를 다른 요소들이 모르게 된다. <br>2. 요소의 크기가 내용 크기로 축소된다. <br>3. 브라우저 화면이 기준이 된다. 스크롤을 따라 움직이다가 특정 위치에서 고정된다. <br>4. top, left, right, bottom 속성으로 위치를 조정할 수 있다.<br></p>
+            <p> position: sticky; <br>1. 요소의 위치를 다른 요소들이 모르게 된다. <br>2. 요소의 크기가 내용 크기로 축소된다. <br>3. 브라우저 화면이 기준이 된다. 스크롤을 따라 움직이다가 특정 위치에서 고정된다. <br>4. top, left, right, bottom 속성으로 위치를 조정할 수 있다.<br></p>
+            <p> position: sticky; <br>1. 요소의 위치를 다른 요소들이 모르게 된다. <br>2. 요소의 크기가 내용 크기로 축소된다. <br>3. 브라우저 화면이 기준이 된다. 스크롤을 따라 움직이다가 특정 위치에서 고정된다. <br>4. top, left, right, bottom 속성으로 위치를 조정할 수 있다.<br></p>
+            <p> position: sticky; <br>1. 요소의 위치를 다른 요소들이 모르게 된다. <br>2. 요소의 크기가 내용 크기로 축소된다. <br>3. 브라우저 화면이 기준이 된다. 스크롤을 따라 움직이다가 특정 위치에서 고정된다. <br>4. top, left, right, bottom 속성으로 위치를 조정할 수 있다.<br></p>
+            <p> position: sticky; <br>1. 요소의 위치를 다른 요소들이 모르게 된다. <br>2. 요소의 크기가 내용 크기로 축소된다. <br>3. 브라우저 화면이 기준이 된다. 스크롤을 따라 움직이다가 특정 위치에서 고정된다. <br>4. top, left, right, bottom 속성으로 위치를 조정할 수 있다.<br></p>
+            <p> position: sticky; <br>1. 요소의 위치를 다른 요소들이 모르게 된다. <br>2. 요소의 크기가 내용 크기로 축소된다. <br>3. 브라우저 화면이 기준이 된다. 스크롤을 따라 움직이다가 특정 위치에서 고정된다. <br>4. top, left, right, bottom 속성으로 위치를 조정할 수 있다.<br></p>
+            <p> position: sticky; <br>1. 요소의 위치를 다른 요소들이 모르게 된다. <br>2. 요소의 크기가 내용 크기로 축소된다. <br>3. 브라우저 화면이 기준이 된다. 스크롤을 따라 움직이다가 특정 위치에서 고정된다. <br>4. top, left, right, bottom 속성으로 위치를 조정할 수 있다.<br></p>
+            <p> position: sticky; <br>1. 요소의 위치를 다른 요소들이 모르게 된다. <br>2. 요소의 크기가 내용 크기로 축소된다. <br>3. 브라우저 화면이 기준이 된다. 스크롤을 따라 움직이다가 특정 위치에서 고정된다. <br>4. top, left, right, bottom 속성으로 위치를 조정할 수 있다.<br></p>
+        </div>
+        <div class="sidebar">
+            <h3>sticky content</h3>
+            <p>
+                position: sticky; <br>
+                1. 요소의 위치를 다른 요소들이 모르게 된다. <br>
+                2. 요소의 크기가 내용 크기로 축소된다. <br>
+                3. 브라우저 화면이 기준이 된다. 스크롤을 따라 움직이다가 특정 위치에서 고정된다. <br>
+                4. top, left, right, bottom 속성으로 위치를 조정할 수 있다.<br>
+            </p>
+        </div>
+    </div>
+
+    <img src="29_caniuse.png" alt="position: sticky;">
+    <a href="https://caniuse.com/?search=sticky" class="back_to_canuse">position 사용할 수 있는지 확인</a>
+
+</body>
+
+</html>

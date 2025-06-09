@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Style</title>
+    <style>
+        .right {
+            text-align: right;
+        }
+        .left {
+            text-align: left;
+        }
+        .center {
+            text-align: center;
+        }
+        .justify {
+            text-align: justify;
+        }
+        .justify_wordbreak {
+            text-align: justify;
+            word-break: break-all;
+        }
+
+        .line-spacing {
+            letter-spacing: 10px;
+        }
+        .word-spacing {
+            word-spacing: 20px;
+        }
+        .line-height {
+            line-height: 34px;
+        }
+
+        .text {
+            border: 1px solid;
+            width: 80%;
+            margin: 10px auto;
+        }
+        .text_indent{
+            text-indent: 20px;
+        }
+        .text_indent2{
+            text-indent: -20px;
+        }
+        .hide_title{
+            text-indent: -2000px;
+        }
+
+        .upper {
+            text-transform: uppercase;
+        }
+        .lower {
+            text-transform: lowercase;
+        }
+        .capitalize {
+            text-transform: capitalize;
+        }
+
+        h2 span:first-child {
+            font-size:20px;
+        }
+        h2 span:last-child {
+            font-size: 15px;
+        }
+        .base {
+            vertical-align: baseline;
+        }
+        .top {
+            vertical-align: top;
+        }
+        .middle {
+            vertical-align: middle;
+        }
+        .bottom {
+            vertical-align: bottom;
+        }
+        .text-top {
+            vertical-align: text-top;
+        }
+        .text-bottom {
+            vertical-align: text-bottom;
+        }
+        .sub {
+            vertical-align: sub;
+        }
+        .super {
+            vertical-align: super;
+        }
+        .pixel {
+            vertical-align: 20px;
+        }
+        /* .image {   보통 이미지에 사용 (공백 제거)
+            vertical-align: top;
+        } */
+
+        nav > ul > li {
+            list-style-type: square;
+        }
+        nav > ul > li > ul > li {
+            list-style-type: none;
+        }
+        ol > li > ol > li > ol {
+            list-style-type: '- ';
+        }
+        .menu {
+            list-style-type: '\1F44D';
+        }
+
+    </style>
+</head>
+
+<body>
+    <p class="right"> Hello Nice Too Meet You. Today is Good Day. To day is Monday. Very Very Goods </p>
+    <p class="left"> Hello Nice Too Meet You. Today is Good Day. To day is Monday. Very Very Goods </p>
+    <p class="center"> Hello Nice Too Meet You. Today is Good Day. To day is Monday. Very Very Goods </p>
+    <p class="justify"> Hello Nice Too Meet You. Today is Good Day. To day is Monday. Very Very Goods To day is Monday. Very Very Goods To day is Monday. Very Very Goods To day is Monday. Very Very Goods To day is Monday. Very Very Goods To day is Monday. Very Very Goods To day is Monday. Very Very Goods To day is Monday. Very Very Goods To day is Monday. Very Very Goods To day is Monday. Very Very Goods </p>
+    <p class="justify_wordbreak"> Hello Nice Too Meet You. Today is Good Day. To day is Monday. Very Very Goods To day is Monday. Very Very Goods To day is Monday. Very Very Goods To day is Monday. Very Very Goods To day is Monday. Very Very Goods To day is Monday. Very Very Goods To day is Monday. Very Very Goods To day is Monday. Very Very Goods To day is Monday. Very Very Goods To day is Monday. Very Very Goods </p>
+
+    <p class="line-spacing"> 포토샵에서는 em단위로 합니다. This set was first defined and drawn by Robert W. Brooks and Peter Matelski in 1978, as part of a study of Kleinian groups.[3] Afterwards, in 1980, Benoit Mandelbrot obtained high-quality visualizations of the set while working at IBM's Thomas J. Watson Research Center in Yorktown Heights, New York. </p>
+    <p class="word-spacing"> This set was first defined and drawn by Robert W. Brooks and Peter Matelski in 1978, as part of a study of Kleinian groups.[3] Afterwards, in 1980, Benoit Mandelbrot obtained high-quality visualizations of the set while working at IBM's Thomas J. Watson Research Center in Yorktown Heights, New York. </p>
+    <p class="line-height"> 글 위 아래 34px입니다. This set was first defined and drawn by Robert W. Brooks and Peter Matelski in 1978, as part of a study of Kleinian groups.[3] Afterwards, in 1980, Benoit Mandelbrot obtained high-quality visualizations of the set while working at IBM's Thomas J. Watson Research Center in Yorktown Heights, New York. </p>
+
+    <p class="text text_indent"> 글자 들여쓰기. The Mandelbrot set has become popular outside mathematics both for its aesthetic appeal and as an example of a complex structure arising from the application of simple rules. It is one of the best-known examples of mathematical visualization, mathematical beauty, and motif. </p>
+    <p class="text text_indent2"> 글자 들여쓰기. The Mandelbrot set has become popular outside mathematics both for its aesthetic appeal and as an example of a complex structure arising from the application of simple rules. It is one of the best-known examples of mathematical visualization, mathematical beauty, and motif. </p>
+
+    <h1>IR 기법</h1>
+    <h1 class="hide_title" ><a herf="">apple (검색이 잘되려면 반드시 필요, 원하는 것은 로고만 나타나게 하기)</a></h1>
+    <h1><a herf=""><img src="logo.png"></a></h1>\
+    <p>요즘은 clip을 통해 숨긴다</p>
+
+    <p class="upper">Text Transform</p>
+    <p class="lower">Text Transform</p>
+    <p class="capitalize">Text Transform</p>
+
+    <h2><span>Vertical-align</span> <span class="base">baseline</span></h2>
+    <h2><span>Vertical-align</span> <span class="top">top</span></h2>
+    <h2><span>Vertical-align</span> <span class="middle">middle</span></h2>
+    <h2><span>Vertical-align</span> <span class="bottom">bottom</span></h2>
+    <h2><span>Vertical-align</span> <span class="text-top">text-top</span></h2>
+    <h2><span>Vertical-align</span> <span class="text-bottom">text-bottom</span></h2>
+    <h2><span>Vertical-align</span> <span class="sub">inherit</span></h2>
+    <h2><span>Vertical-align</span> <span class="super">initial</span></h2>
+    <h2><span>Vertical-align</span> <span class="pixel">baseline</span></h2>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a>
+                <ul>
+                    <li><a href="#">Company</a></li>
+                    <li><a href="#">Location</a>
+                        <ul>
+                            <li><a href="#">Korea</a></li>
+                            <li><a href="#">China</a></li>
+                            <li><a href="#">Japan</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ol>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a>
+                <ol>
+                    <li><a href="#">Company</a></li>
+                    <li><a href="#">Location</a>
+                        <ol>
+                            <li><a href="#">Korea</a></li>
+                            <li><a href="#">China</a></li>
+                            <li><a href="#">Japan</a></li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+    </nav>
+    <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+</body>
+
+</html>

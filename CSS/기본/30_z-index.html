@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-Index</title>
+    <style>
+        .parent {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            z-index: 1;
+        }
+        .siblings {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            top: -50px;
+            left: 50px;
+            background-color: lightgreen;
+            z-index: 1;
+        }   
+
+        div[class^="Child"] {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+
+        .Child1 {
+            top: 0;
+            left: 0;
+            z-index: 2;
+            background-color: red;
+        }
+        .Child2 {
+            top: 75px;
+            left: 35px;
+            z-index: 3;
+            background-color: blue;
+        }
+        .Child3 {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="Child1">Child 1</div>
+        <div class="Child2">Child 2</div>
+    </div>
+    <div class="siblings">
+        <div class="Child3">Child 3</div>
+    </div>
+</body>
+
+</html>

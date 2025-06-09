@@ -1,0 +1,93 @@
+db<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient</title>
+    <link rel="stylesheet" href="01.css">
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+            margin: 2rem auto;
+        }
+
+        .linear {
+            background-image:
+                linear-gradient(
+                    to right,
+                    #3498db 0%,
+                    white 100%
+                );
+        }
+        .linear1 {
+            background-image:
+                linear-gradient(
+                    to right,
+                    #3498db 0%,
+                    #3498db 20%,
+                    white 20%,
+                    white 80%,
+                    #3498db 80%,
+                    #3498db 100%
+                );
+        }
+
+        .radial {
+            background-image: 
+                radial-gradient(
+                    ellipse at 50px 50px,
+                    #3498db 0%,
+                    white 100%
+                );
+        }
+        .radial1 {
+            background-image: 
+                radial-gradient(
+                    circle farthest-corner at 50px 50px,
+                    #3498db 0%,
+                    white 100%
+                );
+        }
+        .radial2 {
+            background-image: 
+                radial-gradient(
+                    circle closest-side at 50px 50px,
+                    #3498db 0%,
+                    white 100%
+                );
+        }
+        .radial3 {
+            background-image: 
+                radial-gradient(
+                    circle closest-corner at 50px 50px,
+                    #3498db 0%,
+                    white 100%
+                );
+        }
+        .radial4 {
+            background-image: 
+                radial-gradient(
+                    circle farthest-side at 50px 50px,
+                    #3498db 0%,
+                    white 100%
+                );
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Gradient</h1>
+    <div class="box linear">linear gradient (방향, 색상 위치, 색상 위치, ...)</div>
+    <div class="box linear1">linear gradient (방향, 색상 위치, 색상 위치, ...)</div>
+    <div class="box radial">radial gradient (모양 (size) at 중심점, 색상위치, ...)</div>
+    <div class="box radial1">radial gradient, farthest-corner(기본값)</div>
+    <div class="box radial2">radial gradient, closest-side(가까운 모서리 까지)</div>
+    <div class="box radial3">radial gradient, closest-corner(가까운 꼭짓점 까지)</div>
+    <div class="box radial4">radial gradient, farthest-side(먼 모서리 까지)</div>
+</body>
+
+</html>

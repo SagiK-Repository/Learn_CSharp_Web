@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .parent div{
+            background: #ebebeb;
+            border: #ccc 1px solid;
+            padding: 10px;
+        }
+        .flex{
+            display: flex;
+        }
+        .infl{
+            display: inline-flex;
+        }
+
+        .box{
+            display: flex;
+            width:400px;
+            height: 200px;
+            background: gray;
+            margin:10px;
+        }
+        .row{
+            flex-direction: row;
+        }
+        .rorv{
+            flex-direction: row-reverse;
+        }
+        .col{
+            flex-direction: column;
+        }
+        .corv{
+            flex-direction: column-reverse;
+        }
+
+        .parentbig div{
+            background: #ebebeb;
+            border: #ccc 1px solid;
+            padding:10px;
+            width: 200px;
+        }
+        .nowrap{
+            flex-wrap: wrap;
+        }
+        .nowrrv{
+            flex-wrap: wrap-reverse;
+        }
+        .both {
+            flex-flow: row wrap-reverse;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Flex Display</h2>
+    <div class="parent">
+        <div>None Flex</div>
+        <div>None Flex</div>
+        <div>None Flex</div>
+    </div>
+    <div class="parent flex">
+        <div>Flex-Item</div>
+        <div>Flex-Item</div>
+        <div>Flex-Item</div>
+    </div>
+    <div class="parent infl">
+        <div>Inline-Flex</div>
+        <div>Inline-Flex</div>
+        <div>Inline-Flex</div>
+    </div>
+    
+    <h2>Flex Direction</h2>
+    <div class="flex">
+        <div class="parent box row">
+            <div>Row-Flex 1</div>
+            <div>Row-Flex 2</div>
+            <div>Row-Flex 3</div>
+        </div>
+        <div class="parent box rorv">
+            <div>Row-Revers 1</div>
+            <div>Row-Revers 2</div>
+            <div>Row-Revers 3</div>
+        </div>
+        <div class="parent box col">
+            <div>Colum-Flex 1</div>
+            <div>Colum-Flex 2</div>
+            <div>Colum-Flex 3</div>
+        </div>
+        <div class="parent box corv">
+            <div>Colum-Revers 1</div>
+            <div>Colum-Revers 2</div>
+            <div>Colum-Revers 3</div>
+        </div>
+    </div>
+
+    <h2>Flex Wrap</h2>
+    <div class="parentbig box">
+        <div>Wrap-Flex</div>
+        <div>Wrap-Flex</div>
+        <div>Wrap-Flex</div>
+    </div>
+    <div class="parentbig box nowrap">
+        <div>nowrap 1</div>
+        <div>nowrap 2</div>
+        <div>nowrap 3</div>
+    </div>
+    <div class="parentbig box nowrrv">
+        <div>nowrap Revers 1</div>
+        <div>nowrap Revers 2</div>
+        <div>nowrap Revers 3</div>
+    </div>
+    <div class="parentbig box both">
+        <div>direction, wrap both 1</div>
+        <div>direction, wrap both 2</div>
+        <div>direction, wrap both 3</div>
+    </div>
+</body>
+
+</html>

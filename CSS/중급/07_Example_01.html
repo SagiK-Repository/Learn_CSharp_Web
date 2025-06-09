@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 01</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            vertical-align: top;
+        }
+        li { list-style: none; width: 336px; margin-bottom: 30px;}
+        li figure {
+            position: relative;
+            overflow: hidden;
+        }
+        li figure:before {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            transform:translateX(100%);
+            transition:0.3s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        li figure figcaption {
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        li figure figcaption p {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        li figure figcaption > * {
+            opacity: 0;
+            margin-left: 50px;
+        }
+        li figure:hover figcaption > * {
+            animation: fadeLeftIn 0.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+        }
+        li figure:hover:before {
+            transform:translateX(0);
+        }
+        @keyframes fadeLeftIn {
+            0% { opacity: 0; margin-left: 50px; }
+            100% { opacity: 1; margin-left: 0; }
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="latest_works">
+        <li>
+            <figure>
+                <img src="./07_Example_01.png" alt="nature">
+                <figcaption>
+                    <p>image description</p>
+                    <a href="">read more</a>
+                </figcaption>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img src="./07_Example_01.png" alt="nature">
+                <figcaption>
+                    <p>image description</p>
+                    <a href="">read more</a>
+                </figcaption>
+            </figure>
+        </li>
+    </ul>
+    <div>
+        <h2>지시 사항</h2>
+        <p>1. 마우스를 올렸을 때 나타날 검은색을 figure:before 선택자로 지정하고 figure 우측에 배치</p>
+        <p>2. figcaption은 절댓값으로 figure를 기준으로 정가운데 있도록 하고 글씨들은 가운데 정렬</p>
+        <p>3. figcaption의 자식 요소 p 요소의 색상과 간격, a요소의 테두리 여백 등 스타일을 설정</p>
+        <p>4. figcaption의 자식 요소들을 모두 안보이도록 하고 우측으로 살짝 이동해 놓기</p>
+        <p>5. figure 요소에 마우스를 올렸을 때 작동할 애니메이션 fadeLeftIn을 작성</p>
+        <p>6. 애니메이션 fadeLeftIn에서 투명도와 위치를 변경하는 스타일 작성</p>
+        <p>7. figure에 마우스를 올렸을 때 우측에 배치했던 검은색이 들어옴</p>
+    </div>
+</body>
+
+</html>
